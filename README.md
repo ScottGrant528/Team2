@@ -21,9 +21,9 @@
 
 # WEBPAGES TO BE MADE
 
-## Global:
+### Global:
 - [ ] Log in 
-## For Attendee:
+### For Attendee:
 - [ ] Create Account
 - [ ] Home (Marking Attendance)
 - [ ] Available Sessions 
@@ -31,7 +31,7 @@
 - [ ] Events
 - [ ] Profile 
 - [ ] Contact Us 
-## For Organisor:
+### For Organisor:
 - [ ] Home (Sign in / Sessions )
 - [ ] Current Sessions 
 - [ ] Latest News
