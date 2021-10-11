@@ -25,10 +25,14 @@
 ## For Attendee
 - [ ] Create Account
 - [ ] Sign in (Marking Attendance)
-- [ ] Home 
+- [ ] Available Sessions 
 - [ ] Latest News
 - [ ] Events
 - [ ] Profile 
 - [ ] Contact Us 
 ## For Organisor
-- [ ] 
+- [ ] Sign in / Sessions 
+- [ ] Current Sessions 
+- [ ] Latest News
+- [ ] Events
+- [ ] Profile
