@@ -26,9 +26,9 @@
 ### For Attendee:
 - [ ] Create Account
 - [ ] Home (Marking Attendance)
-- [ ] Available Sessions 
-- [ ] Latest News
-- [ ] Events
+- [ ] Available Sessions - Jared
+- [ ] Latest News - Jared
+- [ ] Events - Jared
 - [ ] Profile 
 - [ ] Contact Us 
 ### For Organisor:
