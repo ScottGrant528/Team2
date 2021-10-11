@@ -20,9 +20,10 @@
 * Mockups - [Requirements Report](https://docs.google.com/document/d/1N3Q9gU3oSs_PNoPBmU8NOy4DVx0aPX5LHv_FyO-Ak80/edit?usp=sharing)
 
 # WEBPAGES TO BE MADE
-## Global
+
+## Global:
 - [ ] Log in 
-## For Attendee
+## For Attendee:
 - [ ] Create Account
 - [ ] Home (Marking Attendance)
 - [ ] Available Sessions 
@@ -30,7 +31,7 @@
 - [ ] Events
 - [ ] Profile 
 - [ ] Contact Us 
-## For Organisor
+## For Organisor:
 - [ ] Home (Sign in / Sessions )
 - [ ] Current Sessions 
 - [ ] Latest News
