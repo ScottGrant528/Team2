@@ -1,10 +1,14 @@
 # Team 2
 
-## The Team:
+# The Team:
 > Scott Grant
+
 > Jared Scott
+
 > Kester Moore
+
 > Sam Burns
+
 > Jonathon Duffy
 
 # QUESTIONS:
