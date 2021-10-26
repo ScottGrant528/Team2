@@ -37,7 +37,7 @@
 ## HOW TO RUN SERVER TO TEST CODE
 1. cd into 'Team2'
 2. cd into 'DenisLawWebApp'
-3. **run:** node server.js
+3. **run:** npm start
 4. Open https://bazaar-coconut-8080.codio.io/ in a new tab to see the running server
 5. <kbd>Ctrl</kbd> + <kbd>C</kbd> to close server
 
