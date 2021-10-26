@@ -27,7 +27,7 @@
 - [ ] Profile
 - [ ] Attendance
 
-# HOW TO PULL CHANGES FROM GITHUB
+# HOW TO PULL CHANGES FROM GITHUB IN CODIO
 1. cd into 'Team2'
 2. cd into 'DenisLawWebApp'
 3. run 'git pull' 
