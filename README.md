@@ -42,7 +42,3 @@
 1. run git commit -m "message"
 2. run git push https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
     2.1 for example: git push git push https://<GITHUB_ACCESS_TOKEN>@github.com/ScottGrant528/Team2.git
-
-
-
-
