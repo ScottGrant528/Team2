@@ -6,5 +6,10 @@ app.get('/', function(req, res){
 app.get('/test', function(req, res){
     res.send("this is route 2");
 });
+/*
 app.use(express.static('/Team2/DenisLawWebApp/public'))
+app.use(function ( req, res, next) {
+    res.send('This page does not exist!')
+   })
+*/
 app.listen(8080);
