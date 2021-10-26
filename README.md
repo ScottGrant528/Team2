@@ -22,10 +22,12 @@
 # WEBPAGES TO BE MADE
 
 ### Global:
-- [ ] Log in 
-- [ ] Register
-- [ ] Profile
-- [ ] Attendance
+- [ ] Header/Footer - Scott
+- [ ] MongoDB Setup - Jared
+- [ ] Log in - Kester
+- [ ] Register - Kester
+- [ ] Profile - Sam 
+- [ ] Attendance - Jon
 
 # HOW TO PULL CHANGES FROM GITHUB IN CODIO
 1. cd into 'Team2'
