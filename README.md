@@ -12,7 +12,7 @@
 * Jonathon Duffy
 
 # QUESTIONS:
-1. Don't think we'll be able to use the global headers and whatnot mentioned as I'd assume square space will do it for you? Added them anyway for now
+1. 
 
 # Quick Links: 
 * Example code - [W3 Schools HTML tutorials](https://www.w3schools.com/html/)
