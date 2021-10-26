@@ -23,17 +23,14 @@
 
 ### Global:
 - [ ] Log in 
-### For Attendee:
-- [ ] Create Account
-- [ ] Home (Marking Attendance)
-- [ ] Available Sessions - Jared
-- [ ] Latest News - Jared
-- [ ] Events - Jared
-- [ ] Profile 
-- [ ] Contact Us 
-### For Organisor:
-- [ ] Home (Sign in / Sessions )
-- [ ] Current Sessions 
-- [ ] Latest News
-- [ ] Events
+- [ ] Register
 - [ ] Profile
+- [ ] Attendance
+
+# HOW TO RUN SERVER TO TEST CODE
+1. cd into 'Team2'
+2. cd into 'DenisLawWebApp'
+3. run 'node server.js'
+4. Open 'https://bazaar-coconut-8080.codio.io/' in a new tab to see the running server
+
+
