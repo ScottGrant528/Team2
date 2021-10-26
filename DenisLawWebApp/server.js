@@ -5,5 +5,6 @@ app.get('/', function(req, res){
 });
 app.get('/test', function(req, res){
     res.send("this is route 2");
-   });
+});
+app.use(express.static('/Team2/DenisLawWebApp/public'))
 app.listen(8080);
