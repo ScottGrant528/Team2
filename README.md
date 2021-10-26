@@ -39,7 +39,7 @@
 2. cd into DenisLawWebApp
 3. run node server.js
 4. Open https://bazaar-coconut-8080.codio.io/ in a new tab to see the running server
-5. Control + C to close server
+5. <kbd>Ctrl</kbd> + <kbd>C</kbd> to close server
 
 ## HOW TO PUSH CHANGES MADE ON CODIO
 1. run git commit -m "message"
