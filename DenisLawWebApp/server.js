@@ -1,15 +1,37 @@
+// load the external applications needed 
 var express = require('express');
+const session = require('express');
 var app = express();
+
+//setting the view engine to ejs
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
+
+//login
 app.get('/', function(req, res){
- res.send("Hello world! by express");
+    res.render('pages/login');
+})
+
+//register
+app.get('/register', function(req, res){
+    res.render('pages/register');
+})
+
+//profile
+app.get('/profile', function(res,req){
+    res.render('pages/profile');
+})
+
+//attendance
+app.get('/attendance', function(req, res){
+    res.render('pages/attendance');
+})
+
+//default 404 page
+app.use(function(req, res, next) {
+    res.render('pages/404');
 });
-app.get('/test', function(req, res){
-    res.send("this is route 2");
-});
-/*
-app.use(express.static('/Team2/DenisLawWebApp/public'))
-app.use(function ( req, res, next) {
-    res.send('This page does not exist!')
-   })
-*/
+
 app.listen(8080);
