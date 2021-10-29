@@ -7,11 +7,13 @@ var app = express();
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
+app.use(session({ secret: 'example' }));
+
 app.use(express.urlencoded({extended:true}));
 
 //login
 app.get('/', function(req, res){
-    res.render('pages/login.ejs');
+    res.render('pages/login');
 })
 
 //register
