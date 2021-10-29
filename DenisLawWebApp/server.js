@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended:true}));
 
 //login
 app.get('/', function(req, res){
-    res.render('pages/login');
+    res.render('pages/login.ejs');
 })
 
 //register
