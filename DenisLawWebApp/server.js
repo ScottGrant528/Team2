@@ -1,6 +1,6 @@
 // load the external applications needed 
 var express = require('express');
-const session = require('express-session');
+const session = require('express');
 var app = express();
 
 //setting the view engine to ejs
