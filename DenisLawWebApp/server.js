@@ -1,3 +1,4 @@
+console.log('----------------------- Starting server.js -----------------------')
 // load the external applications needed 
 var express = require('express');
 const session = require('express');
