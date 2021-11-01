@@ -16,10 +16,12 @@ app.get('/register', function(req, res){
 });
 
 app.get('/attendance', function(req, res){
+    res.render('pages/attendance')
     console.log('---- Displaying Attendance page ----')
 });
 
 app.get('/profile', function(req, res){
+    res.render('pages/profile')
     console.log('---- Displaying Profile page ----')
 });
 /*
