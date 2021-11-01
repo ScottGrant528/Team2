@@ -26,4 +26,4 @@ app.use(function(req, res, next) {
     console.log('---- 404 page being displayed');
     res.render('pages/404');
 });
-*/.
+*/
