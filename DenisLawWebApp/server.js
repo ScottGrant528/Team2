@@ -2,7 +2,7 @@
 var express = require('express');
 const session = require('express');
 var app = express();
-/*
+
 //setting the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -10,8 +10,8 @@ app.use(express.static('public'));
 app.use(session({ secret: 'example' }));
 
 app.use(express.urlencoded({extended:true}));
-*/
 
+/*
 // Require static assets from public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -50,5 +50,5 @@ app.get('/attendance', function(req, res){
 app.use(function(req, res, next) {
     res.render('pages/404');
 });
-
+*/
 app.listen(8080);
