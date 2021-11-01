@@ -4,6 +4,7 @@ const app = express();
 
 //server side stuff
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views')
 app.listen(8080)
 
 //Default page
