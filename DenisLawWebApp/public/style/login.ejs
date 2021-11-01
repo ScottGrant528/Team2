@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <%- include('../partials/head') %>
+        </head>
+        <body>
+            <header>      
+                <%- include('../partials/header')%>
+                <link rel="stylesheet" href="css/login.css">
+            </header>
+            <!-- The avatar user image -->
+            
+            <!-- The form to login into the site -->
+            <form action="/dologin" method="POST">
+                <div id="container">
+                    <!-- Username label -->
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+                    <!-- Password label -->
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <!-- Login Button -->
+                    <button type="submit" id="login">Login</button>
+                    <button type="button" onclick="location.href='/adduser'" id="createAccount">Create Account</button>
+                </div>
+            </form>
+            <footer>
+                <%- include('../partials/footer')%>
+            </footer>
+        </body>
+    </html>
