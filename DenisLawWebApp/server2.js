@@ -11,6 +11,7 @@ app.get('/', function(req,res){
 });
 
 app.get('/register', function(req, res){
+    res.render('pages/register')
     console.log('---- Displaying Register page ----')
 });
 
