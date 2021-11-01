@@ -21,8 +21,9 @@ app.get('/attendance', function(req, res){
 app.get('/profile', function(req, res){
     console.log('---- Displaying Profile page ----')
 });
-
+/*
 app.use(function(req, res, next) {
     console.log('---- 404 page being displayed');
     res.render('pages/404');
 });
+*/.
