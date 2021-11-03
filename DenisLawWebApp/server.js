@@ -20,8 +20,8 @@ app.get('/register', function(req, res){
 });
 
 //Attendane Page
-app.get('/attendance', function(req, res){
-    res.render('pages/attendance')
+app.get('/Mark-Attendance', function(req, res){
+    res.render('pages/Mark-Attendance')
     console.log('---- Displaying Attendance page ----')
 });
 
@@ -29,4 +29,16 @@ app.get('/attendance', function(req, res){
 app.get('/profile', function(req, res){
     res.render('pages/profile')
     console.log('---- Displaying Profile page ----')
+});
+
+//Home Page
+app.get('/Home', function(req, res){
+    res.render('pages/Home')
+    console.log('---- Displaying Home page ----')
+});
+
+//News Page
+app.get('/Latest-News', function(req, res){
+    res.render('pages/Latest-News')
+    console.log('---- Displaying Latest News page ----')
 });
