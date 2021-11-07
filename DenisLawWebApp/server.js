@@ -44,12 +44,6 @@ app.get('/profile', function(req, res){
     console.log('---- Displaying Profile page ----')
 });
 
-//Home Page
-app.get('/Home', function(req, res){
-    res.render('pages/Home')
-    console.log('---- Displaying Home page ----')
-});
-
 //News Page
 app.get('/Latest-News', function(req, res){
     res.render('pages/Latest-News')
