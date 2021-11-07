@@ -7,7 +7,7 @@ const url = "mongodb://localhost:27017/DLLT_Users";
 */
 //server side stuff
 app.set('view engine', 'ejs');
-//app.set('views', __dirname + '/views')
+app.set('views', __dirname + '/views')
 app.use(express.static(__dirname +  '/public'));
 
 
