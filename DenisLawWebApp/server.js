@@ -16,8 +16,14 @@ app.listen(8080);
 
 //Default page
 app.get('/', function(req,res){
-    res.render('pages/login');
-    console.log('---- Displaying Login page ----')
+    res.render('pages/Home');
+    console.log('---- Displaying Home page ----')
+});
+
+//Login page
+app.get('/login', function(req, res){
+    res.render('pages/login')
+    console.log('---- Displaying login page ----')
 });
 
 //Register page
