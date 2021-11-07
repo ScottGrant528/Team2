@@ -10,6 +10,9 @@ const url = "mongodb://localhost:27017/DLLT_Users";
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views')
 app.use(express.static(__dirname + '/public'));
+
+
+// *****change this to mongodb block*******
 app.listen(8080);
 
 //Default page
