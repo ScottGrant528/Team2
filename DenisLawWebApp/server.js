@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-//mongodb initialisation
+/*mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/DLLT_Users";
 
@@ -12,7 +12,7 @@ MongoClient.connect(url, function(err, database){
   db = database;
   app.listen(8080);
 });
-
+*/
 //server side stuff
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views')
