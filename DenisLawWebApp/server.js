@@ -1,15 +1,22 @@
 //loading external applications to run the server
 const express = require('express');
 const app = express();
-
+const session = require('express-session');
 /*mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/DLLT_Users";
 */
 //server side stuff
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views')
-app.use(express.static(__dirname +  '/public'));
+//app.set('views', __dirname + '/views')
+//app.use(express.static(__dirname +  '/public'));
+app.use(express.static("public"));
+app.use(session({ 
+    secret: 'example',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(express.urlencoded({extended:true}))
 
 
 app.listen(8080);
