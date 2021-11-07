@@ -1,17 +1,29 @@
 //loading external applications to run the server
 const express = require('express');
 const app = express();
-
+/*mongodb initialisation
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://localhost:27017/DLLT_Users";
+*/
 //server side stuff
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views')
-app.use(express.static(__dirname + '/public'));
-app.listen(8080)
+app.use(express.static(__dirname +  '/public'));
+
+
+
+app.listen(8080);
 
 //Default page
 app.get('/', function(req,res){
-    res.render('pages/login');
-    console.log('---- Displaying Login page ----')
+    res.render('pages/Home');
+    console.log('---- Displaying Home page ----')
+});
+
+//Login page
+app.get('/login', function(req, res){
+    res.render('pages/login')
+    console.log('---- Displaying login page ----')
 });
 
 //Register page
@@ -32,14 +44,17 @@ app.get('/profile', function(req, res){
     console.log('---- Displaying Profile page ----')
 });
 
-//Home Page
-app.get('/Home', function(req, res){
-    res.render('pages/Home')
-    console.log('---- Displaying Home page ----')
-});
-
 //News Page
 app.get('/Latest-News', function(req, res){
     res.render('pages/Latest-News')
     console.log('---- Displaying Latest News page ----')
 });
+
+/*
+var db;
+MongoClient.connect(url, function(err, database){
+  if(err) throw err;
+  db = database;
+  app.listen(8080);
+});
+*/
