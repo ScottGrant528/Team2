@@ -2,22 +2,14 @@
 const express = require('express');
 const app = express();
 
-/*mongodb initialisation
+//mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/DLLT_Users";
 
-var db;
-MongoClient.connect(url, function(err, database){
-  if(err) throw err;
-  db = database;
-  app.listen(8080);
-});
-*/
 //server side stuff
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views')
 app.use(express.static(__dirname + '/public'));
-app.listen(8080)
 
 //Default page
 app.get('/', function(req,res){
@@ -53,4 +45,11 @@ app.get('/Home', function(req, res){
 app.get('/Latest-News', function(req, res){
     res.render('pages/Latest-News')
     console.log('---- Displaying Latest News page ----')
+});
+
+var db;
+MongoClient.connect(url, function(err, database){
+  if(err) throw err;
+  db = database;
+  app.listen(8080);
 });
