@@ -8,15 +8,9 @@ const url = "mongodb://localhost:27017/DLLT_Users";
 */
 //server side stuff
 app.set('view engine', 'ejs');
-//app.set('views', __dirname + '/views')
-//app.use(express.static(__dirname +  '/public'));
-app.use(express.static("public"));
-app.use(session({ 
-    secret: 'example',
-    resave: true,
-    saveUninitialized: true
-}));
-app.use(express.urlencoded({extended:true}))
+app.set('views', __dirname + '/views')
+app.use(express.static(__dirname +  '/public'));
+
 
 
 app.listen(8080);
