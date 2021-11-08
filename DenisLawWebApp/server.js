@@ -20,6 +20,12 @@ app.get('/', function(req,res){
     console.log('---- Displaying Home page ----')
 });
 
+//home page
+app.get('/Home', function(req, res){
+    res.render('pages/Home')
+    console.log('---- Displaying Home page ----')
+});
+
 //Login page
 app.get('/login', function(req, res){
     res.render('pages/login')
