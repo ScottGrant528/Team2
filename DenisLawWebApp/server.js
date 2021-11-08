@@ -17,7 +17,7 @@ app.listen(8080);
 //Default page
 app.get('/', function(req,res){
     res.render('pages/Home');
-    console.log('---- Displaying Home page ----')
+    console.log('---- Displaying Default page ----')
 });
 
 //home page
