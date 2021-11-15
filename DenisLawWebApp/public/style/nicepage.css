@@ -1777,8 +1777,114 @@ p {
 .u-align-left {
   text-align: left;
 }
+@media (min-width: 1200px) {
+  .u-align-left-xl {
+    text-align: left;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .u-align-left-lg {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .u-align-left-md {
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .u-align-left-sm {
+    text-align: left;
+  }
+}
+@media (max-width: 575px) {
+  .u-align-left-xs {
+    text-align: left;
+  }
+}
 .u-align-center {
   text-align: center;
+}
+@media (min-width: 1200px) {
+  .u-align-center-xl {
+    text-align: center;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .u-align-center-lg {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .u-align-center-md {
+    text-align: center;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .u-align-center-sm {
+    text-align: center;
+  }
+}
+@media (max-width: 575px) {
+  .u-align-center-xs {
+    text-align: center;
+  }
+}
+.u-align-right {
+  text-align: right;
+}
+@media (min-width: 1200px) {
+  .u-align-right-xl {
+    text-align: right;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .u-align-right-lg {
+    text-align: right;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .u-align-right-md {
+    text-align: right;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .u-align-right-sm {
+    text-align: right;
+  }
+}
+@media (max-width: 575px) {
+  .u-align-right-xs {
+    text-align: right;
+  }
+}
+.u-align-justify {
+  text-align: justify;
+}
+@media (min-width: 1200px) {
+  .u-align-justify-xl {
+    text-align: justify;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .u-align-justify-lg {
+    text-align: justify;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .u-align-justify-md {
+    text-align: justify;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .u-align-justify-sm {
+    text-align: justify;
+  }
+}
+@media (max-width: 575px) {
+  .u-align-justify-xs {
+    text-align: justify;
+  }
 }
 .u-tabs:not([class*="u-align-"]),
 .u-accordion:not([class*="u-align-"]),
@@ -1945,6 +2051,246 @@ p {
   display: inline-block;
   flex: 1;
 }
+blockquote {
+  padding: 10px 20px;
+  padding-left: 0;
+  margin: 0 0 20px;
+  border-left-width: 0;
+  border-top-width: 0 !important;
+  border-right-width: 0 !important;
+  border-bottom-width: 0 !important;
+  border-style: solid;
+}
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+  margin-bottom: 0;
+}
+blockquote footer,
+blockquote small,
+blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 20px;
+  color: #eeeeee;
+}
+blockquote footer:before,
+blockquote small:before,
+blockquote .small:before {
+  content: '\2014   \A0';
+}
+.u-search {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.u-search.u-search-left {
+  flex-direction: row;
+}
+.u-search.u-search-right {
+  flex-direction: row-reverse;
+}
+.u-search button {
+  cursor: pointer;
+  position: relative;
+  flex: 0;
+  background: none;
+  border: 0;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.u-search button span {
+  display: block;
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+}
+.u-search input {
+  flex: 1;
+  position: relative;
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  outline: 0;
+  background: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: inherit;
+}
+.u-search-left.u-search input {
+  padding-right: 0.8em;
+}
+.u-search-right.u-search input {
+  padding-left: 0.8em;
+}
+.u-search input::placeholder {
+  font-family: inherit;
+}
+.u-search-icon {
+  box-sizing: content-box;
+}
+.u-search-left .u-search-icon[class*="u-border-"] {
+  margin-right: 0.8em;
+}
+.u-search-right .u-search-icon[class*="u-border-"] {
+  margin-left: 0.8em;
+}
+.u-search-icon .u-svg-link {
+  vertical-align: top;
+}
+.u-pagination {
+  margin-bottom: 0px;
+  list-style: none;
+  padding: 0;
+  display: table;
+}
+.u-pagination .u-pagination-item {
+  display: inline-block;
+}
+.u-pagination .u-pagination-item.disabled {
+  opacity: 0.5;
+}
+.u-pagination .u-pagination-item.disabled,
+.u-pagination .u-pagination-item.u-pagination-separator {
+  pointer-events: none;
+}
+.u-pagination-left .u-pagination {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.u-pagination-center .u-pagination {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.u-pagination-right .u-pagination {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+.u-pagination.u-spacing-0 .u-nav-item:not(:last-child):not(.active) .u-nav-link {
+  border-right-width: 0 !important;
+}
+.u-pagination.u-spacing-0 .u-nav-item.active + .u-nav-item .u-nav-link {
+  border-left-width: 0 !important;
+}
+@media (max-width: 767px) {
+  .u-pagination .u-pagination-item {
+    display: none;
+  }
+  .u-pagination .u-pagination-item.active,
+  .u-pagination .u-pagination-item.next,
+  .u-pagination .u-pagination-item.start,
+  .u-pagination .u-pagination-item.end,
+  .u-pagination .u-pagination-item.prev:not(.disabled),
+  .u-pagination .u-pagination-item:nth-last-child(1),
+  .u-pagination .u-pagination-item:nth-last-child(2),
+  .u-pagination .u-pagination-item:nth-last-child(3),
+  .u-pagination .u-pagination-item.active:first-child + .u-pagination-item {
+    display: inline-block;
+  }
+  .u-pagination.responsive-style1 .u-pagination-item:not(.active) + .u-pagination-item:nth-last-child(4),
+  .u-pagination.responsive-style1 .u-pagination-item.prev + .active + .u-pagination-item {
+    display: inline-block;
+  }
+  .u-pagination.responsive-style1 .u-pagination-item.active ~ .u-pagination-item:nth-last-child(4) {
+    display: none;
+  }
+  .u-pagination.responsive-style2 .u-pagination-item.active:first-child + .u-pagination-item + .u-pagination-item {
+    display: inline-block;
+  }
+  .u-pagination.responsive-style2 .u-pagination-item.active ~ .u-pagination-item:nth-last-child(3) {
+    display: none;
+  }
+}
+.u-breadcrumbs {
+  list-style: none;
+  padding: 0;
+  display: table;
+}
+.u-breadcrumbs .u-breadcrumbs-item {
+  display: inline-block;
+}
+.u-breadcrumbs .u-breadcrumbs-item:last-of-type .u-nav-link,
+.u-breadcrumbs .u-breadcrumbs-item.u-breadcrumbs-separator .u-nav-link {
+  pointer-events: none;
+}
+.u-breadcrumbs .u-breadcrumbs-separator .u-nav-link {
+  padding: 0 !important;
+}
+.u-breadcrumbs .u-svg-link {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+.u-breadcrumbs .u-svg-content {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+/*begin-commonstyles photoswipe*/
+/*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
+/*
+	Styles for basic PhotoSwipe functionality (sliding area, open/close transitions)
+*/
+/* pswp = photoswipe */
+.pswp {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  touch-action: none;
+  z-index: 1500;
+  -webkit-text-size-adjust: 100%;
+  /* create separate layer, to avoid paint on window.onscroll in webkit/blink */
+  -webkit-backface-visibility: hidden;
+  outline: none;
+}
+.pswp * {
+  box-sizing: border-box;
+}
+.pswp img {
+  max-width: none;
+}
+/* style is added when JS option showHideOpacity is set to true */
+.pswp--animate_opacity {
+  /* 0.001, because opacity:0 doesn't trigger Paint action, which causes lag at start of transition */
+  opacity: 0.001;
+  will-change: opacity;
+  /* for open/close transition */
+  transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+}
+.pswp--open {
+  display: block;
+}
+.pswp--zoom-allowed .pswp__img {
+  /* autoprefixer: off */
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+}
+.pswp--zoomed-in .pswp__img {
+  /* autoprefixer: off */
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+}
+.pswp--dragging .pswp__img {
+  /* autoprefixer: off */
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+/*
+	Background is added as a separate element.
+	As animating opacity is much faster than animating rgba() background-color.
+*/
 .pswp__bg {
   position: absolute;
   left: 0;
