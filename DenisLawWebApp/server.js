@@ -111,5 +111,5 @@ app.post('/dologin', function(req, res){
                 res.redirect('/profile');
             }
         }
-    }))
+    })
 });
