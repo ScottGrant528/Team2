@@ -74,6 +74,7 @@ app.get('/profile', function(req, res){
 
     if(req.session.loggedin){
         res.render('pages/profile')
+        req.body.first = "Test"
         console.log('---- Displaying Profile page ----')
     }
     else{
