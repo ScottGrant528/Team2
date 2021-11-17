@@ -10,9 +10,15 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views')
 app.use(express.static(__dirname +  '/public'));
 app.use(express.static(__dirname + '/jquery.js'));
-app.use(express.static(__dirname + '/nibepage.js'));
+app.use(express.static(__dirname + '/nicepage.js'));
+
+//Session used to remember if user is logged in between pages
+
 
 app.listen(8080);
+
+//Initialise DB variable
+var db
 
 //Default page
 app.get('/', function(req,res){
