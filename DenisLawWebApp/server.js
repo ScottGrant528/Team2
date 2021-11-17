@@ -125,11 +125,12 @@ app.post('/dologin', function(req, res){
 app.post('/adduser', function(req, res){
 
     var name = req.body.first + " " + req.body.last;
-    var regemail = req.body.email;
+    var email = req.body.email;
     var password = req.body.password;
     var postcode = req.body.postcode;
     var dob = req.body.dob;
     var contactNo = req.body.contact;
 
+    console.log(name + ", " + email + ", " + password + ", " + postcode + ", " + dob + ", " + contactNo)
     //DLLT_db.collection('credentials').findOne({""})
 })
