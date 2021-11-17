@@ -140,7 +140,6 @@ app.post('/adduser', function(req, res){
         if (err) throw err;
 
         if (result){
-            console.log("This email is already in use.")
             console.log("---- Cannot register user. Email already in use ----")
             res.redirect("/register")
         }
@@ -153,6 +152,22 @@ app.post('/adduser', function(req, res){
                 console.log("---- New user saved to database ----")
                 res.redirect("/login")
             })
+        }
+    })
+})
+
+app.post('/deleteuser', function(req, res){
+
+    DLLT_db.collection('credentials').deleteOne({"email":req.session.currentuser}, function(err, result){
+
+        if (err) throw err;
+
+        if (result){
+            console.log("---- User successfully deleted ----")
+            req.redirect('/login')
+        }
+        else{
+            console.log(' ---- Error deleting user. Try again ----')
         }
     })
 })
