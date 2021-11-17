@@ -73,7 +73,7 @@ app.get('/profile', function(req, res){
         console.log('---- Displaying Profile page ----')
     }
     else{
-        req.redirect('pages/login')
+        res.redirect('pages/login')
         console.log('---- Not logged in. Redirecting to login page ----')
     }
     
