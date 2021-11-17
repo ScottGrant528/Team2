@@ -74,7 +74,6 @@ app.get('/profile', function(req, res){
 
     if(req.session.loggedin){
         res.render('pages/profile')
-        document.getElementsByTagName('postcode')[0].placeholder="12345"
         console.log('---- Displaying Profile page ----')
     }
     else{
