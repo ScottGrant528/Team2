@@ -185,54 +185,27 @@ app.post('/editpassword', function(req, res){
 
 app.post('/editpostcode', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
-        {$set:{"postcode" : req.body.postcode}, function(err, result){
-          
-            if (err) throw err;
-
-            if (result){
-                console.log("---- Updated user post code ----")
-                res.redirect('/profile')
-            }
-            else{
-                console.log('---- Error updating user post code ----')
-            }
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"postcode" : req.body.postcode}})
+    {
+            console.log("---- Updated user post code ----")
+            res.redirect('/profile')
         }
     })
-})
 
 app.post('/editdob', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
-        {$set:{"password" : req.body.dob}, function(err, result){
-          
-            if (err) throw err;
-
-            if (result){
-                console.log("---- Updated user DoB ----")
-                res.redirect('/profile')
-            }
-            else{
-                console.log('---- Error updating user DoB ----')
-            }
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"dob" : req.body.dob}})
+    {
+            console.log("---- Updated user date of birth ----")
+            res.redirect('/profile')
         }
     })
-})
 
 app.post('/editcontactno', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
-        {$set:{"password" : req.body.contactNo}, function(err, result){
-          
-            if (err) throw err;
-
-            if (result){
-                console.log("---- Updated user contact number ----")
-                res.redirect('/profile')
-            }
-            else{
-                console.log('---- Error updating user contact number ----')
-            }
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"contactno" : req.body.contactNo}})
+    {
+            console.log("---- Updated user emergency contact number ----")
+            res.redirect('/profile')
         }
     })
-})
