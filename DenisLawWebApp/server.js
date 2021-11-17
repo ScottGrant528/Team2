@@ -29,7 +29,7 @@ var db
 MongoClient.connect(url, function(err, database){
     
     if(err) throw err;
-    db = client.database;
+    db = database;
     app.listen(8080);
     console.log('Database ready.')
 })
