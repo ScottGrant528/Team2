@@ -6,6 +6,7 @@ const app = express();
 //mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/DLLT_Users";
+var DLLT_db
 
 //server side stuff
 app.set('view engine', 'ejs');
@@ -24,12 +25,10 @@ app.use(session({
 app.use(express.urlencoded({extended:true}))
 
 //Database initialisation
-var db
-
 MongoClient.connect(url, function(err, database){
     
     if(err) throw err;
-    db = database;
+    DLLT_db = database;
     app.listen(8080);
     console.log('Database ready.')
 })
@@ -99,7 +98,7 @@ app.post('/dologin', function(req, res){
     //console.log(username)
     //console.log(password)
 
-    db.collection('credentials').findOne({"username":username}, function(err, result){
+    DLLT_db.collection('credentials').findOne({"username":username}, function(err, result){
 
         if (err) throw err;
 
