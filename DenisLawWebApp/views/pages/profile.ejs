@@ -22,11 +22,8 @@
                   <p class="u-text u-text-3">
                    <!-- Name parameters-->
 
-                  <script>
-                    alert("Test")
-                  </script>
       <form action="editpassword" method="POST">
-      <input type="password" placeholder="password"  name="password" required>
+      <input type="password" placeholder="password" id="password" name="password" required>
       <a href=""><button id="updatepassword" class="">Update Password</button></a>
       </form>
 
@@ -65,6 +62,14 @@
       </div>
     </section>
     
+    <script>
+      fetch('/userProfileValues', {method: "POST"}.then(function(response){
+
+        document.getElementById("password").outerHTML.placeholder = "test"
+        
+      }))
+
+    </script>
     <!--------------- Footer -------------------------------------------------->
 
     <footer>
