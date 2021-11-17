@@ -28,6 +28,13 @@ app.listen(8080);
 //Database initialisation
 var db
 
+MongoClient.connect(url, function(err, database){
+    
+    if(err) throw err;
+    db = database;
+    app.listen(8080);
+    console.log('Database ready.')
+})
 
 //Default page
 app.get('/', function(req,res){
