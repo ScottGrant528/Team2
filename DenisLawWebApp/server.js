@@ -183,6 +183,8 @@ app.post('/edituser', function(req, res){
         "contactNo":req.body.contact
     }
 
+    console.log(updatedInfo);
+    
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
         {$set:{"password" : updatedInfo.password,
                 "postcode":updatedInfo.postcode,
