@@ -93,4 +93,6 @@ app.post('/dologin', function(req, res){
 
     console.log(username)
     console.log(password)
+
+    res.redirect('/Latest-News')
 });
