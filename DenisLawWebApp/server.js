@@ -13,12 +13,19 @@ app.use(express.static(__dirname + '/jquery.js'));
 app.use(express.static(__dirname + '/nicepage.js'));
 
 //Session used to remember if user is logged in between pages
+app.use(session({ 
+    secret: 'dllt_secret',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(express.urlencoded({extended:true}))
 
 
 app.listen(8080);
 
 //Initialise DB variable
 var db
+
 
 //Default page
 app.get('/', function(req,res){
@@ -34,9 +41,15 @@ app.get('/Home', function(req, res){
 
 //Login page
 app.get('/login', function(req, res){
-    res.render('pages/login')
-    console.log('---- Displaying login page ----')
-});
+    if(req.session.loggedin){
+        res.redirect("pages/profile")
+        console.log("---- Already logged in. Redirecting to profile ----")
+    }
+        else{
+            res.render('pages/login')
+            console.log('---- Displaying login page ----')
+        }
+    });
 
 //Register page
 app.get('/register', function(req, res){
@@ -52,8 +65,16 @@ app.get('/Mark-Attendance', function(req, res){
 
 //Profile Page
 app.get('/profile', function(req, res){
-    res.render('pages/profile')
-    console.log('---- Displaying Profile page ----')
+
+    if(req.session.loggedin){
+        res.render('pages/profile')
+        console.log('---- Displaying Profile page ----')
+    }
+    else{
+        req.redirect('pages/login')
+        console.log('---- Not logged in. Redirecting to login page ----')
+    }
+    
 });
 
 //News Page
@@ -62,11 +83,12 @@ app.get('/Latest-News', function(req, res){
     console.log('---- Displaying Latest News page ----')
 });
 
-/*
-var db;
-MongoClient.connect(url, function(err, database){
-  if(err) throw err;
-  db = database;
-  app.listen(8080);
+
+app.post('/dologin', function(req, res){
+
+    var username = req.body.username;
+    var password = req.body.password;
+
+    console.log(username)
+    console.log(password)
 });
-*/
