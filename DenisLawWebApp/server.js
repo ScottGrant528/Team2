@@ -140,7 +140,7 @@ app.post('/adduser', function(req, res){
         if (err) throw err;
 
         if (result){
-            alert("This email is already in use.")
+            console.log("This email is already in use.")
             console.log("---- Cannot register user. Email already in use ----")
             res.redirect("/register")
         }
