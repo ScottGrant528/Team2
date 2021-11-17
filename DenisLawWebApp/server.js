@@ -74,6 +74,7 @@ app.get('/profile', function(req, res){
 
     if(req.session.loggedin){
         res.render('pages/profile')
+        document.getElementsByTagName('postcode')[0].placeholder="12345"
         console.log('---- Displaying Profile page ----')
     }
     else{
@@ -183,8 +184,8 @@ app.post('/edituser', function(req, res){
         "contactNo":req.body.contact
     }
 
-    console.log(updatedInfo);
-    
+    //console.log(updatedInfo);
+
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
         {$set:{"password" : updatedInfo.password,
                 "postcode":updatedInfo.postcode,
