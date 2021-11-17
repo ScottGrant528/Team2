@@ -103,7 +103,7 @@ app.post('/dologin', function(req, res){
         if (err) throw err;
 
         if(!result){
-            console.log("---- Invalid Username Entered ----");
+            console.warn("---- Invalid Username Entered ----");
             res.redirect('/login');
             return;
         }
@@ -115,7 +115,7 @@ app.post('/dologin', function(req, res){
                 res.redirect('/profile');
             }
             else{
-                console.log("---- Invalid Password Entered ----")
+                console.warn("---- Invalid Password Entered ----")
                 res.redirect('/login')
             }
         }
