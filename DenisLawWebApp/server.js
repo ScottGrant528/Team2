@@ -203,7 +203,7 @@ app.post('/editdob', function(req, res){
 
 app.post('/editcontactno', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"contactno" : req.body.contactNo}})
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"contactNo" : req.body.contactnumber}})
     {
             console.log("---- Updated user emergency contact number ----")
             res.redirect('/profile')
