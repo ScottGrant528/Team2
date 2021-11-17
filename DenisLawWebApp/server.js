@@ -92,18 +92,18 @@ app.get('/Latest-News', function(req, res){
 
 app.post('/dologin', function(req, res){
 
-    var username = req.body.username;
+    var email = req.body.email;
     var password = req.body.password;
 
     //console.log(username)
-    //console.log(password)
+    //console.log(email)
 
-    DLLT_db.collection('credentials').findOne({"username":username}, function(err, result){
+    DLLT_db.collection('credentials').findOne({"email":email}, function(err, result){
 
         if (err) throw err;
 
         if(!result){
-            console.warn("---- Invalid Username Entered ----");
+            console.warn("---- Invalid email entered ----");
             res.redirect('/login');
             return;
         }
@@ -111,7 +111,7 @@ app.post('/dologin', function(req, res){
 
             if (result.password == password){
                 req.session.loggedin = true;
-                req.session.currentuser = username;
+                req.session.currentuser = email;
                 res.redirect('/profile');
             }
             else{
@@ -121,3 +121,15 @@ app.post('/dologin', function(req, res){
         }
     })
 });
+
+app.post('/adduser', function(req, res){
+
+    var name = req.body.first + " " + req.body.last;
+    var regemail = req.body.email;
+    var password = req.body.password;
+    var postcode = req.body.postcode;
+    var dob = req.body.dob;
+    var contactNo = req.body.contact;
+
+    //DLLT_db.collection('credentials').findOne({""})
+})
