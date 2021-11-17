@@ -5,7 +5,7 @@ const app = express();
 
 //mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/DLLT_Users";
+const url = "mongodb://localhost:27017";
 var DLLT_db
 
 //server side stuff
@@ -25,10 +25,10 @@ app.use(session({
 app.use(express.urlencoded({extended:true}))
 
 //Database initialisation
-MongoClient.connect(url, function(err, database){
+MongoClient.connect(url, function(err, client){
     
     if(err) throw err;
-    DLLT_db = database;
+    DLLT_db = client.body('DLLT_Users')
     app.listen(8080);
     console.log('Database ready.')
 })
