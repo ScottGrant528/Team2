@@ -21,19 +21,33 @@
                 <div class="u-container-layout u-container-layout-1">
                   <p class="u-text u-text-3">
                    <!-- Name parameters-->
-      <form action="edituser" method="POST">
+      <form action="editpassword" method="POST">
       <input type="password" placeholder="password"  name="password" required>
-        <!-- Detail parameters -->
-      <input type ="text" placeholder="post code" name ="postcode" required>
-      <input type="datetime" placeholder="date of birth"    name="dob" required>
-      <input type="text" placeholder="contact phone number" name="contact" required>
+      <a href=""><button id="updatepassword" class="">Update Password</button></a>
+      </form>
+
+      <form action="editpostcode" method="POST">
+        <input type ="text" placeholder="post code" name ="postcode" required>
+        <a href=""><button id="updatepassword" class="">Update Postcode</button></a>
+        </form>
+
+        <form action="editdob" method="POST">
+          <input type="text" placeholder="date of birth" name="dob" required>
+          <a href=""><button id="updatedob" class="">Update Date of Birth</button></a>
+          </form>
+      
+          <form action="editcontactno" method="POST">
+            <input type="text" placeholder="date of birth" name="dob" required>
+            <a href=""><button id="updatecontactno" class="">Update Emergency Contact Number</button></a>
+          </form>
+          
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <a href=""><button id="editButton" class="">Edit Account</button></a>
+        
         </form>
           
         <br>
