@@ -94,7 +94,7 @@ app.post('/dologin', function(req, res){
     //console.log(username)
     //console.log(password)
 
-    db.collection('credentials'.findOne({"username":username}, function(err, result){
+    db.collection('credentials').findOne({"username":username}, function(err, result){
 
         if (err) throw err;
 
