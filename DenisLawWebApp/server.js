@@ -28,7 +28,7 @@ app.use(express.urlencoded({extended:true}))
 MongoClient.connect(url, function(err, client){
     
     if(err) throw err;
-    DLLT_db = client.body('DLLT_Users')
+    DLLT_db = client.db('DLLT_Users')
     app.listen(8080);
     console.log('Database ready.')
 })
