@@ -114,6 +114,10 @@ app.post('/dologin', function(req, res){
                 req.session.currentuser = username;
                 res.redirect('/profile');
             }
+            else{
+                console.log("---- Invalid Password Entered ----")
+                res.redirect('/login')
+            }
         }
     })
 });
