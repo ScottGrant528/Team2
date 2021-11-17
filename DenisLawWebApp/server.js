@@ -164,6 +164,8 @@ app.post('/deleteuser', function(req, res){
 
         if (result){
             console.log("---- User successfully deleted ----")
+            req.session.loggedin = false;
+            req.session.destroy();
             req.redirect('/login')
         }
         else{
