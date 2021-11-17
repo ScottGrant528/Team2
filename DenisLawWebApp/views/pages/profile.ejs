@@ -20,27 +20,34 @@
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <p class="u-text u-text-3">
-                    <span style="font-weight: 700;">Name: </span>
-                    Placeholder Name<br>
-                    <span style="font-weight: 700;">Postcode: </span>
-                    Placeholder Postcode<br>
-
-                    <h4 class="u-custom-font u-text u-text-2">Emergency Contact Details</h4>
-                    <span style="font-weight: 700;">Name: </span>
-                    Placeholder Contact Name<br>
-                    <span style="font-weight: 700;">Phone Number:</span>
-                    Placeholder Contact No.
+                   <!-- Name parameters-->
+        <label>Name</label>
+        
+        <input type="text" placeholder="first" name="first" required>
+        <input type="text" placeholder="last"  name="last" required>
+        <!-- Login parameters -->
+      </br><label>Login</label>
+      <input type="email" placeholder="me@example.com" name="email" required>
+      <input type="password" placeholder="password"  name="password" required>
+        <!-- Detail parameters -->
+      </br><label>Details</label>
+      <input type ="text" placeholder="post code" name ="postcode" required>
+      <input type="datetime" placeholder="date of birth"    name="dob" required>
+      <input type="text" placeholder="contact phone number" name="contact" required>
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <a href=""><button id="editButton" class="">Edit Account</button></a>
+        <form action="edituser" method="POST">
+          <a href=""><button id="editButton" class="">Edit Account</button></a>
+        </form>
+        <br>
         <br>
         <form action="/deleteuser" method="POST">
           <input type="checkbox" id="confirmDelete" name="confirmDelete" required>
-          <label for="confirmDelete">I understand that this will permanently delete my account.</label>
+          <label for="confirmDelete">I wish to permanently delete my account.</label>
           <a href=""><button id="deleteButton" class="">Delete Account</button></a>
         </form>
         </a>

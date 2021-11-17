@@ -173,3 +173,15 @@ app.post('/deleteuser', function(req, res){
         }
     })
 })
+
+app.post('/edituser', function(req, res){
+
+    var updatedInfo = {
+        "name":req.body.first + " " + req.body.last,
+        "email":req.body.email,
+        "password":req.body.password,
+        "postcode":req.body.postcode,
+        "dob":req.body.dob,
+        "contactNo":req.body.contact
+    }
+})
