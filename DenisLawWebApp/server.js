@@ -176,21 +176,12 @@ app.post('/deleteuser', function(req, res){
 
 app.post('/editpassword', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
-        {$set:{"password" : req.body.password}, function(err, result){
-          
-            if (err) throw err;
-
-            if (result){
-                console.log("---- Updated user password ----")
-                res.redirect('/profile')
-            }
-            else{
-                console.log('---- Error updating user password ----')
-            }
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"password" : req.body.password}})
+    {
+            console.log("---- Updated user password ----")
+            res.redirect('/profile')
         }
     })
-})
 
 app.post('/editpostcode', function(req, res){
 
