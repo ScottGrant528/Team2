@@ -216,6 +216,6 @@ app.post('/retrieveuserinfo', function(req, res){
 
         if (err) throw err;
 
-        res.send(result.toArray())
+        res.send('1')
     }
 })    
