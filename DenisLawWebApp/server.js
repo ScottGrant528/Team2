@@ -209,13 +209,3 @@ app.post('/editcontactno', function(req, res){
             res.redirect('/profile')
         }
     })
-
-app.post('/retrieveuserinfo', function(req, res){
-
-    DLLT_db.collection('credentials').findOne({"email":req.session.currentuser}), function(err, result){
-
-        if (err) throw err;
-
-        res.send('1')
-    }
-})    
