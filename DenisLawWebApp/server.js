@@ -183,6 +183,7 @@ app.post('/editpassword', function(req, res){
 
             if (result){
                 console.log("---- Updated user password ----")
+                res.redirect('/profile')
             }
             else{
                 console.log('---- Error updating user password ----')
@@ -200,6 +201,7 @@ app.post('/editpostcode', function(req, res){
 
             if (result){
                 console.log("---- Updated user post code ----")
+                res.redirect('/profile')
             }
             else{
                 console.log('---- Error updating user post code ----')
@@ -217,6 +219,7 @@ app.post('/editdob', function(req, res){
 
             if (result){
                 console.log("---- Updated user DoB ----")
+                res.redirect('/profile')
             }
             else{
                 console.log('---- Error updating user DoB ----')
@@ -234,6 +237,7 @@ app.post('/editcontactno', function(req, res){
 
             if (result){
                 console.log("---- Updated user contact number ----")
+                res.redirect('/profile')
             }
             else{
                 console.log('---- Error updating user contact number ----')
