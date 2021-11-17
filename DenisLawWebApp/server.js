@@ -1,5 +1,6 @@
 //loading external applications to run the server
 const express = require('express');
+const session = require('express-session');
 const app = express();
 /*mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
@@ -13,7 +14,7 @@ app.use(express.static(__dirname + '/jquery.js'));
 app.use(express.static(__dirname + '/nicepage.js'));
 
 //Session used to remember if user is logged in between pages
-const session = require('express-session');
+
 app.use(session({ 
     secret: 'dllt_secret',
     resave: true,
