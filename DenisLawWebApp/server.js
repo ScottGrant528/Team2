@@ -174,21 +174,74 @@ app.post('/deleteuser', function(req, res){
     })
 })
 
-app.post('/edituser', function(req, res){
+app.post('/editpassword', function(req, res){
 
-    var updatedInfo = {
-        "password":req.body.password,
-        "postcode":req.body.postcode,
-        "dob":req.body.dob,
-        "contactNo":req.body.contact
-    }
-
-    //console.log(updatedInfo);
-
+    if (err) throw err;
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
-        {$set:{"password" : updatedInfo.password,
-                "postcode":updatedInfo.postcode,
-                "dob":updatedInfo.dob,
-                "contactNo":updatedInfo.contactNo}
+        {$set:{"password" : req.body.password}, function(err, result){
+          
+            if (err) throw err;
+
+            if (result){
+                console.log("---- Updated user password ----")
+            }
+            else{
+                console.log('---- Error updating user password ----')
+            }
+        }
+    })
+})
+
+app.post('/editpostcode', function(req, res){
+
+    if (err) throw err;
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
+        {$set:{"postcode" : req.body.postcode}, function(err, result){
+          
+            if (err) throw err;
+
+            if (result){
+                console.log("---- Updated user post code ----")
+            }
+            else{
+                console.log('---- Error updating user post code ----')
+            }
+        }
+    })
+})
+
+app.post('/editdob', function(req, res){
+
+    if (err) throw err;
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
+        {$set:{"password" : req.body.dob}, function(err, result){
+          
+            if (err) throw err;
+
+            if (result){
+                console.log("---- Updated user DoB ----")
+            }
+            else{
+                console.log('---- Error updating user DoB ----')
+            }
+        }
+    })
+})
+
+app.post('/editcontactno', function(req, res){
+
+    if (err) throw err;
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
+        {$set:{"password" : req.body.contactNo}, function(err, result){
+          
+            if (err) throw err;
+
+            if (result){
+                console.log("---- Updated user contact number ----")
+            }
+            else{
+                console.log('---- Error updating user contact number ----')
+            }
+        }
     })
 })
