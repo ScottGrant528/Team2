@@ -2,10 +2,11 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
-/*mongodb initialisation
+
+//mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/DLLT_Users";
-*/
+
 //server side stuff
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views')
@@ -22,10 +23,9 @@ app.use(session({
 }));
 app.use(express.urlencoded({extended:true}))
 
-
 app.listen(8080);
 
-//Initialise DB variable
+//Database initialisation
 var db
 
 
@@ -91,8 +91,25 @@ app.post('/dologin', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
 
-    console.log(username)
-    console.log(password)
+    //console.log(username)
+    //console.log(password)
 
-    res.redirect('/Latest-News')
+    db.collection('credentials'.findOne({"username":username}, function(err, result){
+
+        if (err) throw err;
+
+        if(!result){
+            console.log("---- Invalud Username Entered ----");
+            res.redirect('/login');
+            return;
+        }
+        else{
+
+            if (result.password == password){
+                req.session.loggedin = true;
+                req.session.currentuser = username;
+                res.redirect('/profile');
+            }
+        }
+    }))
 });
