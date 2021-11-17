@@ -74,7 +74,6 @@ app.get('/profile', function(req, res){
 
     if(req.session.loggedin){
         res.render('pages/profile')
-        req.body.first = "Test"
         console.log('---- Displaying Profile page ----')
     }
     else{
@@ -178,11 +177,16 @@ app.post('/deleteuser', function(req, res){
 app.post('/edituser', function(req, res){
 
     var updatedInfo = {
-        "name":req.body.first + " " + req.body.last,
-        "email":req.body.email,
         "password":req.body.password,
         "postcode":req.body.postcode,
         "dob":req.body.dob,
         "contactNo":req.body.contact
     }
+
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
+        {$set:{"password" : updatedInfo.password,
+                "postcode":updatedInfo.postcode,
+                "dob":updatedInfo.dob,
+                "contactNo":updatedInfo.contactNo}
+    })
 })
