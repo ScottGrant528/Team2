@@ -135,7 +135,7 @@ app.post('/adduser', function(req, res){
 
     //console.log(name + ", " + email + ", " + password + ", " + postcode + ", " + dob + ", " + contactNo)
     
-    DLLT_db.collection('credentials').findOne({"email":email}, function( err, result){
+    DLLT_db.collection('credentials').findOne({"email":userRegInfo.email}, function( err, result){
 
         if (err) throw err;
 
