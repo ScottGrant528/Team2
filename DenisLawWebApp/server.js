@@ -124,13 +124,35 @@ app.post('/dologin', function(req, res){
 
 app.post('/adduser', function(req, res){
 
-    var name = req.body.first + " " + req.body.last;
-    var email = req.body.email;
-    var password = req.body.password;
-    var postcode = req.body.postcode;
-    var dob = req.body.dob;
-    var contactNo = req.body.contact;
+    var userRegInfo = {
+        "name":req.body.first + " " + req.body.last,
+        "email":req.body.email,
+        "password":req.body.password,
+        "postcode":req.body.postcode,
+        "dob":req.body.dob,
+        "contactNo":req.body.contact
+    }
 
-    console.log(name + ", " + email + ", " + password + ", " + postcode + ", " + dob + ", " + contactNo)
-    //DLLT_db.collection('credentials').findOne({""})
+    //console.log(name + ", " + email + ", " + password + ", " + postcode + ", " + dob + ", " + contactNo)
+    
+    DLLT_db.collection('credentials').findOne({"email":email}, function( err, result){
+
+        if (err) throw err;
+
+        if (result){
+            alert("This email is already in use.")
+            console.log("---- Cannot register user. Email already in use ----")
+            res.redirect("/register")
+        }
+        else{
+
+            DLLT_db.collection('credentials').save(userRegInfo, function(err, result){
+
+                if (err) throw err;
+
+                console.log("---- New user saved to database ----")
+                res.redirect("/login")
+            })
+        }
+    })
 })
