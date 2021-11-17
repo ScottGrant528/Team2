@@ -176,7 +176,6 @@ app.post('/deleteuser', function(req, res){
 
 app.post('/editpassword', function(req, res){
 
-    if (err) throw err;
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
         {$set:{"password" : req.body.password}, function(err, result){
           
@@ -194,7 +193,6 @@ app.post('/editpassword', function(req, res){
 
 app.post('/editpostcode', function(req, res){
 
-    if (err) throw err;
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
         {$set:{"postcode" : req.body.postcode}, function(err, result){
           
@@ -212,7 +210,6 @@ app.post('/editpostcode', function(req, res){
 
 app.post('/editdob', function(req, res){
 
-    if (err) throw err;
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
         {$set:{"password" : req.body.dob}, function(err, result){
           
@@ -230,7 +227,6 @@ app.post('/editdob', function(req, res){
 
 app.post('/editcontactno', function(req, res){
 
-    if (err) throw err;
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser}, 
         {$set:{"password" : req.body.contactNo}, function(err, result){
           
