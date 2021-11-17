@@ -146,7 +146,7 @@ app.post('/adduser', function(req, res){
         }
         else{
 
-            DLLT_db.collection('credentials').save(userRegInfo, function(err, result){
+            DLLT_db.collection('credentials').insert(userRegInfo, function(err, result){
 
                 if (err) throw err;
 
