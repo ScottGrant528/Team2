@@ -23,8 +23,6 @@ app.use(session({
 }));
 app.use(express.urlencoded({extended:true}))
 
-app.listen(8080);
-
 //Database initialisation
 var db
 
