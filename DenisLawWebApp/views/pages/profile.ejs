@@ -63,11 +63,13 @@
     </section>
     
     <script>
-     
+     info = '1'
      info = fetch('/retrieveuserinfo', {method: "POST"})
 
      console.log(info)
-      document.getElementById("password").placeholder = "test"
+     console.log('test 1');
+    
+     document.getElementById("password").placeholder = "test"
         
      
 
