@@ -64,8 +64,10 @@
     
     <script>
      
+     info = fetch('/retrieveuserinfo', {method: "POST"})
 
-        document.getElementById("password").placeholder = "test"
+     console.log(info)
+      document.getElementById("password").placeholder = "test"
         
      
 
