@@ -209,3 +209,11 @@ app.post('/editcontactno', function(req, res){
             res.redirect('/profile')
         }
     })
+
+    app.get('/logout', function(req, res){
+
+        console.log("---- Logging user out ----")
+        req.session.loggedin = false;
+        req.session.destroy();
+        res.redirect('/login')
+    })
