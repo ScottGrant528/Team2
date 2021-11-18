@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <%- include('../partials/head') %>
+        </head>
+        <body>
+            <header>      
+                <%- include('../partials/header')%>
+                <link rel="stylesheet" href="style/Sessions.css">
+            </header>
+            <!-- The avatar user image -->
+            
+            <!-- The form to login into the site -->
+            <form action="/addSession" method="POST">
+                <div id="container">
+                    <!-- Username label -->
+                    <label for="sessionLocation"><b>Session Location:</b></label>
+                    <input type="text" placeholder="Enter Session Location" name="sessionLocation" required>
+                    <br>
+                    <!-- Password label -->
+                    <label for="sessionDate"><b>Session Date:</b></label>
+                    <input type="text" placeholder="Enter Session Date" name="sessionDate" required>
+                    <!-- Login Button -->
+                    <br>
+                    <button type="submit" id="submitSession">Submit New Session</button>
+                    
+                </div>
+            </form>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <body>
+            
+            <div class="w3-container">
+              <h2>Current Session List</h2>
+              <p>The Current Sessions:</p>
+              <ul class="w3-ul w3-hoverable">
+                <li>Placeholder 1</li>
+                <li>Placeholder 2</li>
+                <li>Placeholder 3</li>
+              </ul>
+            </div>
+            
+            </body>
+            <div id="container">
+            <a href=""><button id="deleteSession" class="">Delete Session</button></a>
+        </div>
+            <footer>
+                <%- include('../partials/footer')%>
+            </footer>
+        </body>
+    </html>

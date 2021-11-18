@@ -18,8 +18,9 @@ input[type=text], input[type=password] {
 	cursor: pointer;
 	width: 100%
 }
-button: hover {
-	opacity: 0.8
+button:hover {
+    opacity: 0.8;
+  
 }
 #imgcontainer {
 	text-align: center;
