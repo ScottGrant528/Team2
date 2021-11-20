@@ -1,0 +1,71 @@
+  /*Css for the header*/
+  header{
+    background-color: #FF0000;
+}
+/*Css for the nav bar*/
+nav{
+    text-align: center;
+    padding-left: 5px;
+    height: 80px;
+    border: #FF0000;
+    border-style: solid;
+}
+  
+ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: black;
+    text-align: right;
+    padding-right: 50px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+li b {
+    display: block;
+    color: black;
+    text-align: left;
+    padding-right: 50px;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+#mark
+{
+    width: 250px;
+  background-color: lightgrey;
+  border: 5px solid gray;
+  margin: 0;
+}
+
+
+.colourButton{
+  padding-top: 10px;
+}
+    
+#heading{
+  text-align: center;
+  font-size: 60px;
+}
+
+    h2
+    {
+        font-family : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+    footer{
+      text-align: center;
+    }
+      
+    

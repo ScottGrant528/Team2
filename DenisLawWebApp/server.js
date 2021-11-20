@@ -57,6 +57,12 @@ app.get('/login', function(req, res){
         }
     });
 
+//Sessions Page
+app.get('/sessions',function(req, res){
+    res.render('pages/Sessions')
+    console.log('---- Displaying Sessions page ----')
+});
+
 //Register page
 app.get('/register', function(req, res){
     res.render('pages/register')
