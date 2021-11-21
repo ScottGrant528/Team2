@@ -315,6 +315,15 @@ app.post('/organisermarkattendance', function(req, res){
 
 app.post('/exportattendeeinfo', function(req, res){
 
+    fs.writeFile('public/data/attendeeinfo.csv', "", err =>{
+
+        if(err){
+            console.error(err)
+            return
+        }
+            console.log('File write successful')
+    })
+    
     DLLT_db.collection('credentials').find().forEach(function(attendee){
         
         fs.appendFile('public/data/attendeeinfo.csv', "test", err =>{
