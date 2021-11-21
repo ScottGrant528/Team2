@@ -38,6 +38,7 @@ MongoClient.connect(url, function(err, client){
 app.get('/', function(req,res){
     res.render('pages/Home');
     console.log('---- Displaying Default page ----')
+    currentSession = req.session
 });
 
 //home page
@@ -50,6 +51,7 @@ app.get('/Home', function(req, res){
 app.get('/login', function(req, res){
     
     if(req.session.loggedin){
+        req.session.testvariable = "test"
         res.render('pages/profile')
         console.log("---- Already logged in. Redirecting to profile ----")
     }
@@ -83,6 +85,7 @@ app.get('/register', function(req, res){
 app.get('/Mark-Attendance', function(req, res){
     res.render('pages/Mark-Attendance')
     console.log('---- Displaying Attendance page ----')
+    console.log(req.session.testvariable)
 });
 
 //Profile Page
@@ -93,7 +96,6 @@ app.get('/profile', function(req, res){
         console.log('---- Displaying Profile page ----')
     }
     else{
-        currentSession = req.session
         res.redirect('/login')
         console.log('---- Not logged in. Redirecting to login page ----')
     }
