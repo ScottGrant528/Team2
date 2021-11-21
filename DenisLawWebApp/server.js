@@ -2,7 +2,7 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
-const bodyParser = require('body-parser');
+
 //mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017";
@@ -14,9 +14,7 @@ app.set('views', __dirname + '/views')
 app.use(express.static(__dirname +  '/public'));
 app.use(express.static(__dirname + '/jquery.js'));
 app.use(express.static(__dirname + '/nicepage.js'));
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
+
 //Session used to remember if user is logged in between pages
 
 app.use(session({ 
@@ -63,13 +61,14 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
-    if(req.session.loggedin && req.session.currentuser.isAdmin){
+    console.log(req.session.currentuser)
+    if(req.session.loggedin){
         res.render('pages/Sessions')
         console.log('---- Displaying Sessions page ----')
     }
     else{
-        res.render('pages/noaccess')
-        console.log('---- Not logged in or not admin. Redirecting ----')
+        res.redirect('/login')
+        console.log('---- Not logged in or not admin. Redirecting to login page ----')
     }
 
 });
@@ -90,19 +89,8 @@ app.get('/Mark-Attendance', function(req, res){
 app.get('/profile', function(req, res){
 
     if(req.session.loggedin){
-        
-     var currentuser = req.session.currentuser;
-  DLLT_db.collection('credentials').findOne({ "name": currentuser },function (err, result) {
-    if (err) throw err;
-    
-    DLLT_db.collection('credentials').find({"name": currentuser}).toArray(function (err, qresult) {
-      res.render('pages/profile', {
-        user: result,
-        userfields: qresult
-      })
-    })
-  });
-     
+        res.render('pages/profile')
+        console.log('---- Displaying Profile page ----')
     }
     else{
         res.redirect('/login')
@@ -257,48 +245,12 @@ app.post('/editIsAdmin', function(req, res){
     }
 
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email}, {$set:{"isAdmin":isAdmin}})
-
-    {
-        console.log("---- Updated user role ----")
-        res.redirect('/profile')
-    }
 })
 
-app.get('/logout', function(req, res){
+    app.get('/logout', function(req, res){
 
         console.log("---- Logging user out ----")
         req.session.loggedin = false;
         req.session.destroy();
         res.redirect('/login')
-})
-
-app.post('/addSession', function(req, res){
-
-    var sessionInfo = {
-        "location":req.body.sessionLocation,
-        "date":req.body.sessionDate
-    }
-
-    DLLT_db.collection('sessions').findOne({"location":sessionInfo.location}, {"date":sessionInfo.date}, function(err, result){
-
-        if(result){
-            console.log("---- Session already exists. Ammend session details ----")
-            res.redirect('/Sessions')
-        }
-        else{
-
-            DLLT_db.collection('sessions').insert(sessionInfo, function(err, result){
-
-                if (err) throw err;
-
-                console.log("---- New session saved to database ----")
-                res.redirect("/Sessions")
-            })
-        }
     })
-})
-
-app.get('/getSessions', function(req, res){
-
-    res.send({message: "this is a test"})
-})
