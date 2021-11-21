@@ -23,7 +23,6 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(express.urlencoded({extended:true}))
-req.session.isAdmin = false;
 
 //Database initialisation
 MongoClient.connect(url, function(err, client){
@@ -61,6 +60,8 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
     
+    test1 = req.session.isAdmin;
+    console.log(test1)
     console.log(req.session.isAdmin + " 1")
     if(req.session.loggedin && req.session.isAdmin){
         res.render('pages/sessions')
