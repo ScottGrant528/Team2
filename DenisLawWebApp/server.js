@@ -317,8 +317,13 @@ app.post('/exportattendeeinfo', function(req, res){
 
     DLLT_db.collection('credentials').find().forEach(function(attendee){
         
-        fs.appendFile('public/data/attendeeinfo.csv', "test", function(err){
+        fs.appendFile('public/data/attendeeinfo.csv', "test", err =>{
 
+            if(err){
+                console.error(err)
+                return
+            }
+                console.log('File write successful')
                 res.render('pages/Sessions')
         })
     })
