@@ -60,6 +60,7 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
     
+    console.log(req.session.isAdmin + " 1")
     if(req.session.loggedin && req.session.isAdmin){
         res.render('pages/sessions')
         console.log('---- Displaying Sessions page ----')
@@ -132,6 +133,7 @@ app.post('/dologin', function(req, res){
                 if(result.isAdmin){
                     req.session.isAdmin = true
                     console.log("Test")
+                    console.log(req.session.isAdmin)
                 }
             }
             else{
