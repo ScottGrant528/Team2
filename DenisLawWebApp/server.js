@@ -79,7 +79,7 @@ app.get('/Mark-Attendance', function(req, res){
 app.get('/profile', function(req, res){
 
     if(req.session.loggedin){
-        res.render('/profile')
+        res.render('pages/profile')
         console.log('---- Displaying Profile page ----')
     }
     else{
