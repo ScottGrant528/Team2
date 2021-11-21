@@ -309,7 +309,7 @@ app.get('/getStoredSessions', function(req, res){
         }
 
         if(!err && response){
-            console.log(response)
+            console.log(1)
             res.send(response);
         }
     }))
