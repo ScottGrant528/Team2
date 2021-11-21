@@ -262,3 +262,8 @@ app.post('/editIsAdmin', function(req, res){
         req.session.destroy();
         res.redirect('/login')
     })
+
+app.post('/markattendance', function(req, res){
+
+    
+})

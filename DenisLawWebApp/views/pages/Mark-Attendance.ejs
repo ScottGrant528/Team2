@@ -17,13 +17,16 @@
         </p>
         <br>
         <br>
-        <label for="sessions">Choose a session to attend:</label>
-        <select name="sessions" id="sessions">
-          <option value="Event 1 - 22/11/21 - 19:00">Event 1 - 22/11/21 - 19:00</option>
-          <option value="Event 2 - 25/11/21 - 14:00">Event 2 - 25/11/21 - 14:00</option>
-          <option value="Event 3 - 29/11/21 - 18:00">Event 3 - 29/11/21 - 18:00</option>
-        </select>
-        <a href="/Mark-Attendance" class="u-btn u-button-style u-btn-1" id = "Mark-Attendance-Button">MARK ATTENDANCE<br>
+        <form action="/markattendance" method="POST">
+          <label for="sessions">Choose a session to attend:</label>
+          <select name="sessions" id="sessions" required>
+            <option value="Event 1 - 22/11/21 - 19:00">Event 1 - 22/11/21 - 19:00</option>
+            <option value="Event 2 - 25/11/21 - 14:00">Event 2 - 25/11/21 - 14:00</option>
+            <option value="Event 3 - 29/11/21 - 18:00">Event 3 - 29/11/21 - 18:00</option>
+          </select>
+          <button type="submit" class="u-btn u-button-style u-btn-1" id = "Mark-Attendance-Button">MARK ATTENDANCE<br>
+        </form>
+       
         </a>
       </div>
     </section>
