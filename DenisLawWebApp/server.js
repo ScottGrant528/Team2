@@ -128,6 +128,7 @@ app.post('/dologin', function(req, res){
                 req.session.currentuser = email;
                 res.redirect('/profile');
 
+                console.log(result.isAdmin)
                 if(result.isAdmin){
                     req.session.isAdmin = true
                 }
