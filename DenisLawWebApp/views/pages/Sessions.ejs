@@ -42,6 +42,22 @@
                 <li id="session3">Event 3 - 29/11/21 - 18:00 <br> <a href=""><button id="deleteSession3" class="">Delete Session</button></a></li>
               </ul>
             </div>
+
+            <br>
+            <br>
+            <form action="/organisermarkattendance" method="POST">
+                <label for="attendee">Enter attendee name:</label>
+                <input type="text" required>
+                <br>
+                <br>
+                <label for="sessions">Choose a session to mark attendee into:</label>
+                <select name="sessions" id="sessions" required>
+                  <option value="Event 1 - 22/11/21 - 19:00">Event 1 - 22/11/21 - 19:00</option>
+                  <option value="Event 2 - 25/11/21 - 14:00">Event 2 - 25/11/21 - 14:00</option>
+                  <option value="Event 3 - 29/11/21 - 18:00">Event 3 - 29/11/21 - 18:00</option>
+                </select>
+                <button type="submit" class="u-btn u-button-style u-btn-1" id = "Mark-Attendance-Button">MARK ATTENDANCE<br>
+              </form>
             </body>
             <div id="container">
            
