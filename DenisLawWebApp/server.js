@@ -315,7 +315,7 @@ app.post('/organisermarkattendance', function(req, res){
 
 app.post('/exportattendeeinfo', function(req, res){
 
-    DLLT_db.collection('credentials'.find().forEach(function(attendee){
+    DLLT_db.collection('credentials').find().forEach(function(attendee){
         
         fs.appendFile('public/data/attendeeinfo.csv', "test", function(err){
 
@@ -327,5 +327,5 @@ app.post('/exportattendeeinfo', function(req, res){
                 res.render('pages/Sessions')
             }
         })
-    }))
+    })
 })
