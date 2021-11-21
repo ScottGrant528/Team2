@@ -136,7 +136,8 @@ app.post('/adduser', function(req, res){
         "password":req.body.password,
         "postcode":req.body.postcode,
         "dob":req.body.dob,
-        "contactNo":req.body.contact
+        "contactNo":req.body.contact,
+        "isAdmin":req.body.isAdmin
     }
 
     //console.log(name + ", " + email + ", " + password + ", " + postcode + ", " + dob + ", " + contactNo)
