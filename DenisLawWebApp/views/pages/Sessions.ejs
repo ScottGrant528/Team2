@@ -42,6 +42,27 @@
             
 <script>
 
+$(document).ready(function(){
+
+async function getSessions() {
+  let url = 'public/data/sessions.json';
+  try {
+      let res = await fetch(url);
+      return await res.json();
+  } catch (error) {
+      console.log(error);
+  }
+}
+
+async function loadSessions(){
+
+    let sessions = await getSessions();
+
+    console.log(sessions)
+}
+
+})
+
 </script>
 
             </body>
