@@ -63,7 +63,7 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
-    DLLT_db.collection('sessions').find().toArray(function (err, result){
+    DLLT_db.collection('sessions').find({}, {"_id" : 0, "location" : 1, "date" : 1} ).toArray(function (err, result){
 
         if (err) throw err;
 
