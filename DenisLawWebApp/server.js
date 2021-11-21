@@ -81,8 +81,16 @@ app.get('/register', function(req, res){
 
 //Attendane Page
 app.get('/Mark-Attendance', function(req, res){
-    res.render('pages/Mark-Attendance')
-    console.log('---- Displaying Attendance page ----')
+    
+    if(req.session.loggedin){
+        res.render('pages/Mark-Attendance')
+        console.log('---- Displaying attendance page ----')
+    }
+    else{
+        res.redirect('/login')
+        console.log('---- Not logged in. Redirecting to login page ----')
+    }
+
 });
 
 //Profile Page
