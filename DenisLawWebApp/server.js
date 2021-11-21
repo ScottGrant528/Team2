@@ -300,7 +300,7 @@ app.post('/addSession', function(req, res){
     })
 })
 
-app.get('/getStoredSessions', function(req, res){
+app.post('/getStoredSessions', function(req, res){
 
     DLLT_db.collection('sessions').find((function(err, response){
 
