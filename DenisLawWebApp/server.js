@@ -23,6 +23,7 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(express.urlencoded({extended:true}))
+req.session.isAdmin = false;
 
 //Database initialisation
 MongoClient.connect(url, function(err, client){
