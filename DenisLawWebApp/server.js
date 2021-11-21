@@ -304,6 +304,11 @@ app.post('/exportattendeeinfo', function(req, res){
 
     DLLT_db.collection('credentials').find().forEach(function(attendee){
         
-        fs.writeFile('/DennisLawWebApp/public/data/attendeeinfo.csv', "test")
+        fs.writeFile('/DennisLawWebApp/public/data/attendeeinfo.csv', "test", err =>{
+            if (err){
+                console.log(err)
+                return
+            }
+        })
     })
 })
