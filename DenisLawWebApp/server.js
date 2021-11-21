@@ -48,8 +48,6 @@ app.get('/Home', function(req, res){
 
 //Login page
 app.get('/login', function(req, res){
-
-    currentSession = req.session
     
     if(req.session.loggedin){
         res.render('pages/profile')
@@ -95,6 +93,7 @@ app.get('/profile', function(req, res){
         console.log('---- Displaying Profile page ----')
     }
     else{
+        currentSession = req.session
         res.redirect('/login')
         console.log('---- Not logged in. Redirecting to login page ----')
     }
