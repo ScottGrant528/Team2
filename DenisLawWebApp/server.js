@@ -65,7 +65,7 @@ app.get('/sessions',function(req, res){
     console.log(currentSession.isAdmin)
 
     if(req.session.loggedin && currentSession.isAdmin){
-        res.render('pages/sessions')
+        res.render('pages/Sessions')
         console.log('---- Displaying Sessions page ----')
     }
     else{
