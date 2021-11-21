@@ -130,6 +130,13 @@ app.post('/dologin', function(req, res){
 
 app.post('/adduser', function(req, res){
 
+    if (req.body.isAdmin == "on"){
+        isAdmin = true
+    }
+    else {
+        isAdmin = false
+    }
+    
     var userRegInfo = {
         "name":req.body.first + " " + req.body.last,
         "email":req.body.email,
@@ -137,7 +144,7 @@ app.post('/adduser', function(req, res){
         "postcode":req.body.postcode,
         "dob":req.body.dob,
         "contactNo":req.body.contact,
-        "isAdmin":req.body.isAdmin
+        "isAdmin":isAdmin
     }
 
     //console.log(name + ", " + email + ", " + password + ", " + postcode + ", " + dob + ", " + contactNo)
