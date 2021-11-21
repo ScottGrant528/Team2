@@ -1,6 +1,8 @@
 //loading external applications to run the server
 const express = require('express');
 const session = require('express-session');
+const jsonfile = require('jsonfile')
+const sessionsFile = 'public/data/sessions.json'
 const app = express();
 
 //mongodb initialisation
@@ -61,6 +63,10 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
+    jsonfile.writeFile(sessionsFile, "test123", function(err){
+        if (err) console.log('---- Error writing sessions to file ----')
+    })
+    
     if(req.session.loggedin && req.session.currentuser.isAdmin){
         res.render('pages/Sessions')
         console.log('---- Displaying Sessions page ----')
@@ -282,13 +288,5 @@ app.post('/addSession', function(req, res){
                 res.redirect("/Sessions")
             })
         }
-    })
-})
-
-app.get('/getSessions', function(req, res){
-
-    DLLT_db.collection('sessions').find(function(err, response){
-
-        res.json(response)
     })
 })
