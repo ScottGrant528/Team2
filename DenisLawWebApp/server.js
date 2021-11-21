@@ -256,6 +256,8 @@ app.post('/editIsAdmin', function(req, res){
     }
 
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email}, {$set:{"isAdmin":isAdmin}})
+
+    res.redirect('/profile')
 })
 
     app.get('/logout', function(req, res){
