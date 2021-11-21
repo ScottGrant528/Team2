@@ -66,7 +66,7 @@ app.get('/sessions',function(req, res){
         console.log('---- Displaying Sessions page ----')
     }
     else if(req.session.loggedin){
-        res.redirect('/noaccess')
+        res.render('pages/noaccess')
         console.log('---- Not admin. Redirecting ----')
     }
     else{
