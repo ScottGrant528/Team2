@@ -315,7 +315,7 @@ app.post('/organisermarkattendance', function(req, res){
 
 app.post('/exportattendeeinfo', function(req, res){
 
-    fs.writeFile('public/data/attendeeinfo.csv', "test", function(err){
+    fs.appendFile('public/data/attendeeinfo.csv', "test", function(err){
 
         if(err){
             console.log(err)
