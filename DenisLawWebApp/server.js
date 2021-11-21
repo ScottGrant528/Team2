@@ -267,9 +267,13 @@ app.post('/markattendance', function(req, res){
 
     DLLT_db.collection('attendance').insert({"session":req.body.sessions, "attendee":req.session.currentuser.name}, function(err, result){
 
-        if (err) throw err;
+        if (err){
+            throw err
+        } 
+        else{
+            console.log("---- Attendance entry saved to database ----")
+            res.redirect("pages/attendanceconfirmation")
+        }
 
-        console.log("---- Attendance entry saved to database ----")
-        res.redirect("/Mark-Attendance")
     })
 })
