@@ -97,6 +97,19 @@ app.get('/Mark-Attendance', function(req, res){
 
 });
 
+//Attendane Page
+app.get('/Contact', function(req, res){
+    
+   
+        res.render('pages/Contact')
+        console.log('---- Displaying Contact page ----')
+   
+   
+   
+   
+
+});
+
 //Profile Page
 app.get('/profile', function(req, res){
 
