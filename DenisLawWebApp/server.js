@@ -63,18 +63,9 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
-    DLLT_db.collection('sessions').find(function(err, result){
+    sessions = DLLT_db.collection('sessions').find()
 
-        if(err){
-            console.log('---- Error reading sessions from database ----')
-        }
-        else{
-            jsonfile.writeFile(sessionsFile, result, function(err){
-                if (err) console.log('---- Error writing sessions to file ----')
-            })
-        }
-        
-    }) 
+    jsonfile.writefile(sessionsFile, sessions)
 
     if(req.session.loggedin && req.session.currentuser.isAdmin){
         res.render('pages/Sessions')
