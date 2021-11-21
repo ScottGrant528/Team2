@@ -244,7 +244,7 @@ app.post('/editIsAdmin', function(req, res){
         isAdmin = false
     }
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.collection.email}, {$set:{"isAdmin":isAdmin}})
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email}, {$set:{"isAdmin":isAdmin}})
 })
 
     app.get('/logout', function(req, res){
