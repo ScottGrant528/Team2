@@ -200,7 +200,7 @@ app.post('/deleteuser', function(req, res){
 
 app.post('/editpassword', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"password" : req.body.password}})
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email},{$set:{"password" : req.body.password}})
     {
             console.log("---- Updated user password ----")
             res.redirect('/profile')
@@ -209,7 +209,7 @@ app.post('/editpassword', function(req, res){
 
 app.post('/editpostcode', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"postcode" : req.body.postcode}})
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email},{$set:{"postcode" : req.body.postcode}})
     {
             console.log("---- Updated user post code ----")
             res.redirect('/profile')
@@ -218,7 +218,7 @@ app.post('/editpostcode', function(req, res){
 
 app.post('/editdob', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"dob" : req.body.dob}})
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email},{$set:{"dob" : req.body.dob}})
     {
             console.log("---- Updated user date of birth ----")
             res.redirect('/profile')
@@ -227,12 +227,25 @@ app.post('/editdob', function(req, res){
 
 app.post('/editcontactno', function(req, res){
 
-    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser},{$set:{"contactNo" : req.body.contactnumber}})
+    DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email},{$set:{"contactNo" : req.body.contactnumber}})
     {
             console.log("---- Updated user emergency contact number ----")
             res.redirect('/profile')
         }
     })
+
+app.post('/editIsAdmin', function(req, res){
+
+    if(req.body.isAdmin == "on"){
+        
+        isAdmin = true
+    }
+    else{
+        isAdmin = false
+    }
+
+    DLLT_db.collection('credentials').updateOne({email:req.session.collection.email}, {$set:{"isAdmin":isAdmin}})
+})
 
     app.get('/logout', function(req, res){
 
