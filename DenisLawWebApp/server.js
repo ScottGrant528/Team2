@@ -61,6 +61,7 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
+    console.log(req.session.currentuser)
     if(req.session.loggedin){
         res.render('pages/Sessions')
         console.log('---- Displaying Sessions page ----')
@@ -126,7 +127,7 @@ app.post('/dologin', function(req, res){
 
             if (result.password == password){
                 req.session.loggedin = true;
-                req.session.currentuser = email;
+                req.session.currentuser = result;
                 res.redirect('/profile');
             }
             else{
