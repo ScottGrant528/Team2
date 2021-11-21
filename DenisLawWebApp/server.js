@@ -61,14 +61,17 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
-    console.log(req.session.currentuser)
-    if(req.session.loggedin){
+    if(req.session.loggedin && req.session.currentuser.isAdmin){
         res.render('pages/Sessions')
         console.log('---- Displaying Sessions page ----')
     }
+    else if(req.session.loggedin){
+        res.redirect('/noaccess')
+        console.log('---- Not admin. Redirecting ----')
+    }
     else{
         res.redirect('/login')
-        console.log('---- Not logged in or not admin. Redirecting to login page ----')
+        console.log('---- Not logged in -----')
     }
 
 });
