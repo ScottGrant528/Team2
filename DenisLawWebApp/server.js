@@ -287,5 +287,5 @@ app.post('/addSession', function(req, res){
 
 app.get('/getSessions', function(req, res){
 
-    res.json("test message")
+    res.send("test message")
 })
