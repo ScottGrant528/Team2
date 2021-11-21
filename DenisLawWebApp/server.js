@@ -284,3 +284,8 @@ app.post('/addSession', function(req, res){
         }
     })
 })
+
+app.get('/getSessions', function(req, res){
+
+    res.send("this is a test")
+})
