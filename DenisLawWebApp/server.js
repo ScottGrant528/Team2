@@ -2,6 +2,7 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
+const fs = require('fs');
 
 //mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
@@ -302,6 +303,7 @@ app.post('/organisermarkattendance', function(req, res){
 app.post('/exportattendeeinfo', function(req, res){
 
     DLLT_db.collection('credentials').find().forEach(function(attendee){
-        console.log(attendee.name+" "+attendee.email)
+        
+        fs.writeFile('/DennisLawWebApp/public/data/attendeeinfo.csv', "test")
     })
 })
