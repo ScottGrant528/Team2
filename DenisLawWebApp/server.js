@@ -299,7 +299,7 @@ app.post('/organisermarkattendance', function(req, res){
     })
 })
 
-app.post('/exportattendeedetails', function(req, res){
+app.post('/exportattendeeinfo', function(req, res){
 
     DLLT_db.collection('credentials').find().forEach(function(attendee){
         console.log(attendee.name+" "+attendee.email)
