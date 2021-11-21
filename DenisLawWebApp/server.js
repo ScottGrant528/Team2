@@ -272,7 +272,7 @@ app.post('/markattendance', function(req, res){
         } 
         else{
             console.log("---- Attendance entry saved to database ----")
-            res.redirect('/attendanceconfirmation')
+            res.render('/attendanceconfirmation')
         }
 
     })
