@@ -23,6 +23,7 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(express.urlencoded({extended:true}))
+var currentSession;
 
 //Database initialisation
 MongoClient.connect(url, function(err, client){
@@ -37,6 +38,7 @@ MongoClient.connect(url, function(err, client){
 app.get('/', function(req,res){
     res.render('pages/Home');
     console.log('---- Displaying Default page ----')
+    currentSession = req.session
 });
 
 //home page
@@ -133,9 +135,9 @@ app.post('/dologin', function(req, res){
 
                 console.log(result.isAdmin)
                 if(result.isAdmin){
-                    req.session.isAdmin = true
+                    currentSession.isAdmin = true;
                     console.log("Test")
-                    console.log(req.session.isAdmin)
+                    console.log(currentSession.isAdmin)
                 }
             }
             else{
