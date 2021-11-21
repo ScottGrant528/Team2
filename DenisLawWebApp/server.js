@@ -65,7 +65,7 @@ app.get('/sessions',function(req, res){
 
     sessions = DLLT_db.collection('sessions').find()
 
-    jsonfile.writefile(sessionsFile, sessions)
+    jsonfile.writeFile(sessionsFile, sessions)
 
     if(req.session.loggedin && req.session.currentuser.isAdmin){
         res.render('pages/Sessions')
