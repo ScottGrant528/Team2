@@ -41,30 +41,14 @@
             </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="public/data/sessions.json"></script>
 <script>
 
-$(document).ready(function(){
-
-async function getSessions() {
-  let url = 'public/data/sessions.json';
-  try {
-      let res = await fetch(url);
-      return await res.json();
-  } catch (error) {
-      console.log(error);
-  }
+function load(){
+    var mydata = JSON.parse(sessions)
 }
 
-async function loadSessions(){
-
-    let sessions = await getSessions();
-
-    sessions.array.forEach(session => {
-        console.log("session")
-    });
-}
-
-})
+console.log(mydata[0].location)
 
 </script>
 
