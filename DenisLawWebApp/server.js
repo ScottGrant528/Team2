@@ -247,7 +247,7 @@ app.post('/editcontactno', function(req, res){
 
 app.post('/editIsAdmin', function(req, res){
 
-    if(req.body.isAdmin == "on"){
+    if(req.body.isAdmin == "on" && req.body.code == "RGU"){
         
         isAdmin = true
     }
