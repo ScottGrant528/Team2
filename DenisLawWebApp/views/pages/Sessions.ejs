@@ -37,14 +37,15 @@
               <p>The Current Sessions:</p>
 
               <ul class="w3-ul w3-hoverable">
-                <li>Event 1 - 22/11/21 - 19:00 <br> <a href=""><button id="deleteSession" class="">Delete Session</button></a></li>
-                <li>Event 2 - 25/11/21 - 14:00</li>
-                <li>Event 3 - 29/11/21 - 18:00</li>
+                <li id="session1">Event 1 - 22/11/21 - 19:00 <br> <a href=""><button id="deleteSession1" class="">Delete Session</button></a></li>
+                <li id="session2">Event 2 - 25/11/21 - 14:00 <br> <a href=""><button id="deleteSession2" class="">Delete Session</button></a></li>
+                <li id="session3">Event 3 - 29/11/21 - 18:00 <br> <a href=""><button id="deleteSession3" class="">Delete Session</button></a></li>
               </ul>
             </div>
             </body>
             <div id="container">
-            <a href=""><button id="deleteSession" class="">Delete Session</button></a>
+           
+            <script>function deleteSession(){document.getElementById("session1".value = "")}</script>
         </div>
             <footer>
                 <%- include('../partials/footer')%>
