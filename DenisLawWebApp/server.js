@@ -287,7 +287,8 @@ app.post('/addSession', function(req, res){
 
 app.get('/getSessions', function(req, res){
 
-    var data = ["test", "test1", "test2"];
+    DLLT_db.collection('sessions').find(function(err, response){
 
-    res.json(data)
+        res.send(response)
+    })
 })
