@@ -38,7 +38,6 @@ MongoClient.connect(url, function(err, client){
 app.get('/', function(req,res){
     res.render('pages/Home');
     console.log('---- Displaying Default page ----')
-    currentSession = req.session
 });
 
 //home page
@@ -49,6 +48,9 @@ app.get('/Home', function(req, res){
 
 //Login page
 app.get('/login', function(req, res){
+
+    currentSession = req.session
+    
     if(req.session.loggedin){
         res.render('pages/profile')
         console.log("---- Already logged in. Redirecting to profile ----")
