@@ -20,7 +20,9 @@ input[type=text], input[type=datetime],input[type=email], input[type=password]
 	width: 100%
 }
 
-
+body{
+	margin-left: 20px;
+}
 .u-section-1 {
 	background-image: none
 }
