@@ -48,7 +48,7 @@ app.get('/Home', function(req, res){
 //Login page
 app.get('/login', function(req, res){
     if(req.session.loggedin){
-        res.redirect('pages/profile')
+        res.render('pages/profile')
         console.log("---- Already logged in. Redirecting to profile ----")
     }
         else{
