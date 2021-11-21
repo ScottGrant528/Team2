@@ -2,6 +2,10 @@
     <html>
         <head>
             <%- include('../partials/head') %>
+
+            <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="/DenisLawWebApp/public/data/sessions.json"></script>
+            <script type="text/javascript" src="/DenisLawWebApp/views/scripts/sessions.js"></script>
         </head>
         <body onload="load()">
             <header>      
@@ -39,19 +43,6 @@
                 <li>Placeholder 3</li>
               </ul>
             </div>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="DennisLawWebApp/public/data/sessions.json"></script>
-<script>
-
-function load(){
-    var mydata = JSON.parse(sessions)
-}
-
-console.log(mydata[0].location)
-
-</script>
-
             </body>
             <div id="container">
             <a href=""><button id="deleteSession" class="">Delete Session</button></a>
