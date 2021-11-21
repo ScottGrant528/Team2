@@ -23,7 +23,6 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(express.urlencoded({extended:true}))
-var currentSession;
 
 //Database initialisation
 MongoClient.connect(url, function(err, client){
@@ -38,7 +37,6 @@ MongoClient.connect(url, function(err, client){
 app.get('/', function(req,res){
     res.render('pages/Home');
     console.log('---- Displaying Default page ----')
-    currentSession = req.session
 });
 
 //home page
@@ -51,7 +49,6 @@ app.get('/Home', function(req, res){
 app.get('/login', function(req, res){
     
     if(req.session.loggedin){
-        req.session.testvariable = "test"
         res.render('pages/profile')
         console.log("---- Already logged in. Redirecting to profile ----")
     }
@@ -64,7 +61,7 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
-    if(req.session.loggedin && currentSession.isAdmin){
+    if(req.session.loggedin){
         res.render('pages/Sessions')
         console.log('---- Displaying Sessions page ----')
     }
@@ -85,7 +82,6 @@ app.get('/register', function(req, res){
 app.get('/Mark-Attendance', function(req, res){
     res.render('pages/Mark-Attendance')
     console.log('---- Displaying Attendance page ----')
-    console.log(req.session.testvariable)
 });
 
 //Profile Page
@@ -132,10 +128,6 @@ app.post('/dologin', function(req, res){
                 req.session.loggedin = true;
                 req.session.currentuser = email;
                 res.redirect('/profile');
-
-                if(result.isAdmin){
-                    currentSession.isAdmin = true;
-                }
             }
             else{
                 console.warn("---- Invalid Password Entered ----")
@@ -147,13 +139,6 @@ app.post('/dologin', function(req, res){
 
 app.post('/adduser', function(req, res){
 
-    if (req.body.isAdmin == "on"){
-        isAdmin = true
-    }
-    else {
-        isAdmin = false
-    }
-
     var userRegInfo = {
         "name":req.body.first + " " + req.body.last,
         "email":req.body.email,
@@ -161,7 +146,6 @@ app.post('/adduser', function(req, res){
         "postcode":req.body.postcode,
         "dob":req.body.dob,
         "contactNo":req.body.contact,
-        "isAdmin":isAdmin
     }
 
     //console.log(name + ", " + email + ", " + password + ", " + postcode + ", " + dob + ", " + contactNo)
@@ -196,7 +180,6 @@ app.post('/deleteuser', function(req, res){
         if (result){
             console.log("---- User successfully deleted ----")
             req.session.loggedin = false;
-            currentSession.isAdmin = false;
             req.session.destroy();
             res.redirect('/login')
         }
@@ -246,7 +229,6 @@ app.post('/editcontactno', function(req, res){
 
         console.log("---- Logging user out ----")
         req.session.loggedin = false;
-        currentSession.isAdmin = false;
         req.session.destroy();
         res.redirect('/login')
     })
