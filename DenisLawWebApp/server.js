@@ -61,8 +61,6 @@ app.get('/login', function(req, res){
 
 //Sessions Page
 app.get('/sessions',function(req, res){
-    
-    console.log(currentSession.isAdmin)
 
     if(req.session.loggedin && currentSession.isAdmin){
         res.render('pages/Sessions')
@@ -132,11 +130,8 @@ app.post('/dologin', function(req, res){
                 req.session.currentuser = email;
                 res.redirect('/profile');
 
-                console.log(result.isAdmin)
                 if(result.isAdmin){
                     currentSession.isAdmin = true;
-                    console.log("Test")
-                    console.log(currentSession.isAdmin)
                 }
             }
             else{
@@ -198,7 +193,7 @@ app.post('/deleteuser', function(req, res){
         if (result){
             console.log("---- User successfully deleted ----")
             req.session.loggedin = false;
-            req.session.isAdmin = false;
+            currentSession.isAdmin = false;
             req.session.destroy();
             res.redirect('/login')
         }
@@ -248,7 +243,7 @@ app.post('/editcontactno', function(req, res){
 
         console.log("---- Logging user out ----")
         req.session.loggedin = false;
-        req.session.isAdmin = false;
+        currentSession.isAdmin = false;
         req.session.destroy();
         res.redirect('/login')
     })
