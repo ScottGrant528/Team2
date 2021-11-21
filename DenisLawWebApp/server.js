@@ -214,6 +214,7 @@ app.post('/editpassword', function(req, res){
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email},{$set:{"password" : req.body.password}})
     {
             console.log("---- Updated user password ----")
+
             res.redirect('/profile')
         }
     })
@@ -257,7 +258,7 @@ app.post('/editIsAdmin', function(req, res){
 
     DLLT_db.collection('credentials').updateOne({email:req.session.currentuser.email}, {$set:{"isAdmin":isAdmin}})
 
-    res.redirect('/profile')
+    res.redirect('/logout')
 })
 
     app.get('/logout', function(req, res){
