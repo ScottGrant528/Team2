@@ -59,8 +59,16 @@ app.get('/login', function(req, res){
 
 //Sessions Page
 app.get('/sessions',function(req, res){
-    res.render('pages/Sessions')
-    console.log('---- Displaying Sessions page ----')
+    
+    if(req.session.loggedin && req.session.isAdmin){
+        res.render('pages/sessions')
+        console.log('---- Displaying Sessions page ----')
+    }
+    else{
+        res.redirect('/login')
+        console.log('---- Not logged in or not admin. Redirecting to login page ----')
+    }
+
 });
 
 //Register page
@@ -119,6 +127,10 @@ app.post('/dologin', function(req, res){
                 req.session.loggedin = true;
                 req.session.currentuser = email;
                 res.redirect('/profile');
+
+                if(result.isAdmin){
+                    req.session.isAdmin = true
+                }
             }
             else{
                 console.warn("---- Invalid Password Entered ----")
@@ -136,7 +148,7 @@ app.post('/adduser', function(req, res){
     else {
         isAdmin = false
     }
-    
+
     var userRegInfo = {
         "name":req.body.first + " " + req.body.last,
         "email":req.body.email,
@@ -179,6 +191,7 @@ app.post('/deleteuser', function(req, res){
         if (result){
             console.log("---- User successfully deleted ----")
             req.session.loggedin = false;
+            req.session.isAdmin = false;
             req.session.destroy();
             res.redirect('/login')
         }
@@ -228,6 +241,7 @@ app.post('/editcontactno', function(req, res){
 
         console.log("---- Logging user out ----")
         req.session.loggedin = false;
+        req.session.isAdmin = false;
         req.session.destroy();
         res.redirect('/login')
     })
