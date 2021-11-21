@@ -307,10 +307,9 @@ app.post('/exportattendeeinfo', function(req, res){
         fs.writeFile('public/data/attendeeinfo.csv', "test", err =>{
             if (err){
                 console.log(err)
-                return
             }
             else{
-                res.redirect('/sessions')
+                res.render('/sessions')
             }
         })
     })
