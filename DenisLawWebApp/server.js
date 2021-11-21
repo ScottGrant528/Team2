@@ -322,7 +322,7 @@ app.post('/exportattendeeinfo', function(req, res){
                 console.log(err)
             }
             else{
-                res.render('/sessions')
+                res.render('pages/sessions')
             }
         })
     })
