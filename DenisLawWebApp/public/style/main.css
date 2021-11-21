@@ -29,6 +29,7 @@ li a {
     padding-right: 50px;
     text-decoration: none;
     font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 li b {
@@ -38,6 +39,7 @@ li b {
     padding-right: 50px;
     text-decoration: none;
     font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 li c {
@@ -46,6 +48,7 @@ li c {
   text-align: center;
   text-decoration: none;
   font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #mark
