@@ -1,10 +1,8 @@
 //loading external applications to run the server
 const express = require('express');
 const session = require('express-session');
-const jsonfile = require('jsonfile')
-const sessionsFile = 'public/data/sessions.json'
 const app = express();
-
+const bodyParser = require('body-parser');
 //mongodb initialisation
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017";
@@ -16,7 +14,9 @@ app.set('views', __dirname + '/views')
 app.use(express.static(__dirname +  '/public'));
 app.use(express.static(__dirname + '/jquery.js'));
 app.use(express.static(__dirname + '/nicepage.js'));
-
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 //Session used to remember if user is logged in between pages
 
 app.use(session({ 
@@ -63,26 +63,13 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
 
-    DLLT_db.collection('sessions').find().toArray(function (err, result){
-
-        if (err) throw err;
-
-        jsonfile.writeFile(sessionsFile, result)
-    })
-
-   
-
     if(req.session.loggedin && req.session.currentuser.isAdmin){
         res.render('pages/Sessions')
         console.log('---- Displaying Sessions page ----')
     }
-    else if (req.session.loggedin && !(req.session.currentuser.isAdmin)){
-        res.render('pages/noaccess')
-        console.log('---- Not admin. Access not allowed ----')
-    }
     else{
-        console.log('---- Not logged in. Redirecting ----')
-        res.render('pages/login')
+        res.render('pages/noaccess')
+        console.log('---- Not logged in or not admin. Redirecting ----')
     }
 
 });
@@ -103,8 +90,19 @@ app.get('/Mark-Attendance', function(req, res){
 app.get('/profile', function(req, res){
 
     if(req.session.loggedin){
-        res.render('pages/profile')
-        console.log('---- Displaying Profile page ----')
+        
+     var currentuser = req.session.currentuser;
+  DLLT_db.collection('credentials').findOne({ "name": currentuser },function (err, result) {
+    if (err) throw err;
+    
+    DLLT_db.collection('credentials').find({"name": currentuser}).toArray(function (err, qresult) {
+      res.render('pages/profile', {
+        user: result,
+        userfields: qresult
+      })
+    })
+  });
+     
     }
     else{
         res.redirect('/login')
@@ -300,17 +298,7 @@ app.post('/addSession', function(req, res){
     })
 })
 
-app.get('/getStoredSessions', function(req, res){
+app.get('/getSessions', function(req, res){
 
-    DLLT_db.collection('sessions').find((function(err, response){
-
-        if(err){
-            console.log(err)
-        }
-
-        if(!err && response){
-            console.log(1)
-            res.send(response);
-        }
-    }))
+    res.send({message: "this is a test"})
 })
