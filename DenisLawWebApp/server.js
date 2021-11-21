@@ -131,6 +131,7 @@ app.post('/dologin', function(req, res){
                 console.log(result.isAdmin)
                 if(result.isAdmin){
                     req.session.isAdmin = true
+                    console.log("Test")
                 }
             }
             else{
