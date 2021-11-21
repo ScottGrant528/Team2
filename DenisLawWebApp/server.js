@@ -319,12 +319,7 @@ app.post('/exportattendeeinfo', function(req, res){
         
         fs.appendFile('public/data/attendeeinfo.csv', "test", function(err){
 
-            if(err){
-                console.log(err)
-            }
-            else{
                 res.render('pages/Sessions')
-            }
         })
     })
 })
