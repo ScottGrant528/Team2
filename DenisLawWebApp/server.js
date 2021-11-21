@@ -289,6 +289,6 @@ app.get('/getSessions', function(req, res){
 
     DLLT_db.collection('sessions').find(function(err, response){
 
-        res.send(response)
+        res.json(response)
     })
 })
