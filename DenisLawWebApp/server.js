@@ -265,5 +265,11 @@ app.post('/editIsAdmin', function(req, res){
 
 app.post('/markattendance', function(req, res){
 
-    
+    DLLT_db.collection('attendance').insert({"session":req.body.sessions, "attendee":req.currentuser.name}, function(err, result){
+
+        if (err) throw err;
+
+        console.log("---- Attendance entry saved to database ----")
+        res.redirect("/Mark-Attendance")
+    })
 })
