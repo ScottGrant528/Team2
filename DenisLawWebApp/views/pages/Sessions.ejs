@@ -3,7 +3,7 @@
         <head>
             <%- include('../partials/head') %>
  
-            
+
         </head>
         <body>
             <header>      
@@ -35,6 +35,10 @@
             <div class="w3-container">
               <h2>Current Session List</h2>
               <p>The Current Sessions:</p>
+
+              <form action="/getStoredSessions" method="GET">
+                <button type="submit" id="submitRequest">Get Sessions</button>
+            </form>
               <ul class="w3-ul w3-hoverable">
                 <li>Placeholder 1</li>
                 <li>Placeholder 2</li>

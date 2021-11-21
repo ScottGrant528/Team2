@@ -299,3 +299,18 @@ app.post('/addSession', function(req, res){
         }
     })
 })
+
+app.get('/getStoredSessions', function(req, res){
+
+    DLLT_db.collection('sessions').find((function(err, response){
+
+        if(err){
+            console.log(err)
+        }
+
+        if(!err && response){
+            console.log(response)
+            res.send(response);
+        }
+    }))
+})
