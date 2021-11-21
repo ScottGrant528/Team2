@@ -62,10 +62,9 @@ app.get('/login', function(req, res){
 //Sessions Page
 app.get('/sessions',function(req, res){
     
-    test1 = req.session.isAdmin;
-    console.log(test1)
-    console.log(req.session.isAdmin + " 1")
-    if(req.session.loggedin && req.session.isAdmin){
+    console.log(currentSession.isAdmin)
+
+    if(req.session.loggedin && currentSession.isAdmin){
         res.render('pages/sessions')
         console.log('---- Displaying Sessions page ----')
     }
