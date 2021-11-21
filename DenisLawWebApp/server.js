@@ -324,11 +324,11 @@ app.post('/exportattendeeinfo', function(req, res){
             console.log('File write successful')
     })
 
-    DLLT_db.collection('credentials').find().forEach(function(attendee){
+    DLLT_db.collection('credentials').find(function(attendee){
        
-        output = attendee.toString()
+        console.log(attendee)
 
-        fs.appendFile('public/data/attendeeinfo.txt', output, err =>{
+        fs.appendFile('public/data/attendeeinfo.txt', attendee, err =>{
 
             if(err){
                 console.error(err)
