@@ -251,10 +251,36 @@ app.post('/editIsAdmin', function(req, res){
     }
 })
 
-    app.get('/logout', function(req, res){
+app.get('/logout', function(req, res){
 
         console.log("---- Logging user out ----")
         req.session.loggedin = false;
         req.session.destroy();
         res.redirect('/login')
+})
+
+app.post('/addSession', function(req, res){
+
+    var sessionInfo = {
+        "location":req.body.sessionLocation,
+        "date":req.body.sessionDate
+    }
+
+    DLLT_db.collection('sessions').findOne({"location":sessionInfo.location}, {"date":sessionInfo.date}, function(err, result){
+
+        if(result){
+            console.log("---- Session already exists. Ammend session details ----")
+            res.redirect('/Sessions')
+        }
+        else{
+
+            DLLT_db.collection('sessions').insert(sessionInfo, function(err, result){
+
+                if (err) throw err;
+
+                console.log("---- New session saved to database ----")
+                res.redirect("/Sessions")
+            })
+        }
     })
+})
