@@ -321,7 +321,6 @@ app.post('/exportattendeeinfo', function(req, res){
 
             if(err){
                 console.log(err)
-                return
             }
             else{
                 res.render('pages/Sessions')
