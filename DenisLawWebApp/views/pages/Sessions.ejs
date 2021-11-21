@@ -59,7 +59,9 @@ async function loadSessions(){
 
     let sessions = await getSessions();
 
-    console.log(sessions.toString())
+    sessions.array.forEach(session => {
+        console.log("session")
+    });
 }
 
 })
