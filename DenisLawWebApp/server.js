@@ -148,7 +148,7 @@ app.post('/dologin', function(req, res){
 
 app.post('/adduser', function(req, res){
 
-    if(req.body.isAdmin == "on"){
+    if(req.body.isAdmin == "on" && req.body.code == "RGU"){
         isAdmin = true
     }
     else{
