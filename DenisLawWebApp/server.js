@@ -309,6 +309,9 @@ app.post('/exportattendeeinfo', function(req, res){
                 console.log(err)
                 return
             }
+            else{
+                res.redirect('/sessions')
+            }
         })
     })
 })
