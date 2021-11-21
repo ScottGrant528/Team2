@@ -326,7 +326,7 @@ app.post('/exportattendeeinfo', function(req, res){
 
     DLLT_db.collection('credentials').find().forEach(function(attendee){
         
-       console.log(attendee[0].name)
+       console.log(attendee)
 
         fs.appendFile('public/data/attendeeinfo.csv', "test", err =>{
 
