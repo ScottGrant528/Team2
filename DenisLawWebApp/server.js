@@ -315,7 +315,7 @@ app.post('/organisermarkattendance', function(req, res){
 
 app.post('/exportattendeeinfo', function(req, res){
 
-    fs.writeFile('public/data/attendeeinfo.csv', "", err =>{
+    fs.writeFile('public/data/attendeeinfo.txt', "", err =>{
 
         if(err){
             console.error(err)
@@ -324,11 +324,11 @@ app.post('/exportattendeeinfo', function(req, res){
             console.log('File write successful')
     })
 
-    DLLT_db.collection('credentials').find(function(attendee){
+    DLLT_db.collection('credentials').find().forEach(function(attendee){
        
-        console.log(attendee)
+        output = attendee.toString()
 
-        fs.appendFile('public/data/attendeeinfo.txt', attendee, err =>{
+        fs.appendFile('public/data/attendeeinfo.txt', output, err =>{
 
             if(err){
                 console.error(err)
