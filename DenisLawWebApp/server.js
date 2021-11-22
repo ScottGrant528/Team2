@@ -345,21 +345,6 @@ app.post('/exportattendeeinfo', function(req, res){
 res.redirect('/Sessions')
 })
 
-pp.post('/organisermarkattendance', function(req, res){
-
-    DLLT_db.collection('attendance').insert({"session":req.body.sessions, "attendee":req.body.attendee}, function(err, result){
-
-        if (err){
-            throw err
-        } 
-        else{
-            console.log("---- Attendance entry saved to database ----")
-            res.render('pages/attendanceconfirmation')
-        }
-
-    })
-})
-
 app.post('/exportattendanceinfo', function(req, res){
 
     fs.writeFile('public/data/attendanceinfo.txt', "", err =>{
