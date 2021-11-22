@@ -356,7 +356,7 @@ app.post('/exportattendanceinfo', function(req, res){
             console.log('File clear successful')
     })
 
-    DLLT_db.collection('attendace').find().forEach(function(attendance){
+    DLLT_db.collection('attendance').find().forEach(function(attendance){
        
         const myJSON = JSON.stringify(attendance) + "\n\n";
         fs.appendFile('public/data/attendanceinfo.txt', myJSON, err =>{
