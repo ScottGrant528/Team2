@@ -329,11 +329,9 @@ app.post('/exportattendeeinfo', function(req, res){
        
         const myJSON = JSON.stringify(attendee) + "\n";
         fs.appendFile('public/data/attendeeinfo.txt', myJSON, err =>{
-
         output = attendee.toString()
 
         fs.appendFile('public/data/attendeeinfo.txt', output, err =>{
-
 
             if(err){
                 console.error(err)
@@ -343,4 +341,5 @@ app.post('/exportattendeeinfo', function(req, res){
         })
     })
     res.redirect('/Sessions')
+})
 })
