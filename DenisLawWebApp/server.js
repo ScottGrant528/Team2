@@ -327,7 +327,7 @@ app.post('/exportattendeeinfo', function(req, res){
 
     DLLT_db.collection('credentials').find().forEach(function(attendee){
        
-        const myJSON = JSON.stringify(attendee) + "\n";
+        const myJSON = JSON.stringify(attendee) + "\n\n";
         fs.appendFile('public/data/attendeeinfo.txt', myJSON, err =>{
         output = attendee.toString()
 
