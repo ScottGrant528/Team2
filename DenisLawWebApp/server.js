@@ -375,3 +375,26 @@ app.post('/exportattendanceinfo', function(req, res){
 })
 res.redirect('/Sessions')
 })
+
+app.post('/addSession', function(req, res){
+    
+    DLLT_db.collection('sessions').findOne({"location":req.body.sessionLocation, "date":req.body.sessionDate}, function(err, result){
+
+        if (err) throw err;
+
+        if (result){
+            console.log("---- Cannot add session. Event already exists ----")
+            res.redirect("/Sessions")
+        }
+        else{
+
+            DLLT_db.collection('sessions').insert({"location":req.body.sessionLocation, "date":req.body.sessionDate}, function(err, result){
+
+                if (err) throw err;
+
+                console.log("---- New session saved to database ----")
+                res.redirect("/Session")
+            })
+        }
+    })
+})
