@@ -116,6 +116,7 @@ app.get('/profile', function(req, res){
     if(req.session.loggedin){
         res.render('pages/profile')
         console.log('---- Displaying Profile page ----')
+        
     }
     else{
         res.redirect('/login')
@@ -321,14 +322,13 @@ app.post('/exportattendeeinfo', function(req, res){
             console.error(err)
             return
         }
-            console.log('File write successful')
+            console.log('File clear successful')
     })
 
-    DLLT_db.collection('credentials').find(function(attendee){
+    DLLT_db.collection('credentials').find().forEach(function(attendee){
        
-        console.log(attendee)
-
-        fs.appendFile('public/data/attendeeinfo.txt', attendee, err =>{
+        const myJSON = JSON.stringify(attendee) + "\n";
+        fs.appendFile('public/data/attendeeinfo.txt', myJSON, err =>{
 
             if(err){
                 console.error(err)

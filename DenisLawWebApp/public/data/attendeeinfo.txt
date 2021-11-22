@@ -1,0 +1,9 @@
+{"_id":"6199a58ae4270de3a13567ac","name":"Jared Scott","email":"jared.scott@test.com","password":"password","postcode":"AB51 5QU","dob":"14/07/2000","contactNo":"07438947120","isAdmin":true}
+{"_id":"6199a5b3e4270de3a13567ad","name":"Kester Moore","email":"kester.moore@test.com","password":"password1","postcode":"AB51 3TJ","dob":"14/01/1998","contactNo":"07429376820","isAdmin":true}
+{"_id":"619a3e7add63cfdcdcfa2314","name":"Scott Grant","email":"scott.grant@test.com","password":"password2","postcode":"AB41 2ES","dob":"14/07/2000","contactNo":"07429376820","isAdmin":false}
+{"_id":"619a99709f38dd3ce694d3f8","name":"www www","email":"www@www.com","password":"www","postcode":"ww","dob":"15/02/2000","contactNo":"123112312","isAdmin":false}
+{"_id":"619ab5bb368df2d06c54a610","name":"Attendee User","email":"attendee.user@test.com","password":"password5","postcode":"AB51 3TJ","dob":"29/09/2001","contactNo":"07438947120","isAdmin":false}
+{"_id":"619ab74464b19759c8ec0e94","name":"organiser user","email":"organiser.user@test.com","password":"password6","postcode":"AB41 2ES","dob":"28/07/2000","contactNo":"07429376820","isAdmin":true}
+{"_id":"619ab7ab64b19759c8ec0e95","name":"fake organiser","email":"fake.organiser@test.com","password":"password7","postcode":"AB51 5QU","dob":"27/08/2000","contactNo":"07429376821","isAdmin":true}
+{"_id":"619abbb6026e2cf4f78c6756","name":"Test Account","email":"test.account@test.com","password":"test","postcode":"test","dob":"test","contactNo":"test","isAdmin":true}
+{"_id":"619acfd860d4e504689f2fb4","name":"test2 test2","email":"test2@test.com","password":"test2","postcode":"test2","dob":"test2","contactNo":"test2","isAdmin":true}
