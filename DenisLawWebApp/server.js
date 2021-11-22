@@ -340,6 +340,7 @@ app.post('/exportattendeeinfo', function(req, res){
                 console.log('File write successful')
         })
     })
-    res.redirect('/Sessions')
+    
 })
+res.redirect('/Sessions')
 })
