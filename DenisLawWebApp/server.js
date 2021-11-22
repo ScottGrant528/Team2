@@ -376,6 +376,38 @@ app.post('/exportattendanceinfo', function(req, res){
 res.redirect('/Sessions')
 })
 
+app.post('/exportsessioninfo', function(req, res){
+
+    fs.writeFile('public/data/sessioninfo.txt', "", err =>{
+
+        if(err){
+            console.error(err)
+            return
+        }
+            console.log('File clear successful')
+    })
+
+    DLLT_db.collection('sessions').find().forEach(function(sessions){
+       
+        const myJSON = JSON.stringify(sessions) + "\n\n";
+        fs.appendFile('public/data/sessioninfo.txt', myJSON, err =>{
+        output = sessions.toString()
+
+        fs.appendFile('public/data/sessioninfo.txt', output, err =>{
+
+            if(err){
+                console.error(err)
+                return
+            }
+                console.log('File write successful')
+        })
+    })
+    
+})
+res.redirect('/Sessions')
+})
+
+
 app.post('/addSession', function(req, res){
     
     DLLT_db.collection('sessions').findOne({"location":req.body.sessionLocation, "date":req.body.sessionDate}, function(err, result){
