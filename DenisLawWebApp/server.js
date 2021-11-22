@@ -393,7 +393,7 @@ app.post('/addSession', function(req, res){
                 if (err) throw err;
 
                 console.log("---- New session saved to database ----")
-                res.redirect("/Session")
+                res.redirect("/Sessions")
             })
         }
     })
